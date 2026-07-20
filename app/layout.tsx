@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${montserrat.className} antialiased bg-white text-slate-800 min-h-screen flex flex-col`}>
         <Navbar />
-        <main className="flex-grow pt-24">
+        <main className="flex-grow pt-[60px]">
           {children}
         </main>
         <Footer />

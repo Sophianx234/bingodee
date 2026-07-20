@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -8,7 +8,23 @@ import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    
+    // Add event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Call handler right away so state gets updated with initial scroll position
+    handleScroll();
+    
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -18,8 +34,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full z-50 top-0 start-0 bg-white">
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 lg:px-12 py-4">
+    <nav className={`fixed w-full z-50 top-0 start-0 bg-white transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 lg:px-12 py-3">
         
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -28,7 +44,7 @@ export default function Navbar() {
             alt="Bingodee Logo" 
             width={200} 
             height={50} 
-            className="h-10 w-auto"
+            className="h-9 w-auto"
             priority
           />
         </Link>
@@ -39,9 +55,9 @@ export default function Navbar() {
             <Link 
               key={link.name}
               href={link.path} 
-              className={`text-[15px] font-medium transition-colors ${
+              className={`text-[14px] font-semibold transition-colors ${
                 pathname === link.path 
-                  ? 'text-slate-700 pb-1 border-b-2 border-[#6592ff]' 
+                  ? 'text-slate-800 pb-1 border-b-[3px] border-[#6592ff]' 
                   : 'text-slate-500 hover:text-slate-800'
               }`}
             >
@@ -54,7 +70,7 @@ export default function Navbar() {
         <div className="flex md:order-2 items-center">
           <Link 
             href="/contact" 
-            className="hidden md:inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3 transition-colors shadow-sm rounded-sm"
+            className="hidden md:inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[14px] px-6 py-2.5 transition-colors shadow-sm rounded-sm tracking-wide"
           >
             Contact
           </Link>

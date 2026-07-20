@@ -1,15 +1,16 @@
 import Link from "next/link"
+import path from "path/win32"
 
 function Hero() {
   return (
-      <section className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-12 mt-4 mb-20">
-        
-        {/* Main Image Container */}
-        {/* The overall image has cut corners on top-left and top-right */}
-        <div 
-          className="relative w-full h-[650px] bg-gray-200 overflow-hidden shadow-xl"
+    <section className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-12 mt-0 mb-20">
+      
+      {/* Main Image Container */}
+      {/* The overall image has cut corners on top-left and top-right */}
+      <div 
+        className="relative w-full h-[600px] md:h-[calc(100vh-96px)] min-h-[500px] max-h-[900px] bg-gray-200 overflow-hidden shadow-xl"
           style={{
-            clipPath: 'polygon(6% 0, 94% 0, 100% 12%, 100% 100%, 0 100%, 0 12%)',
+            clip-path: `polygon(18.95% 24.94%, 60.85% 24.94%, 74.81% 36.66%, 74.81% 59.79%, 51.68% 59.79%, 18.95% 36.66%)`,
             backgroundImage: 'url(/imgs/h-1.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',

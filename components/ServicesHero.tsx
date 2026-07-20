@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 export default function ServicesHero() {
   return (
-    <section className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-12 mt-8 mb-24">
+    <section className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-12 mt-0 mb-20">
       
       {/* Main Image Container */}
       <div 
-        className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] bg-gray-200"
+        className="relative w-full h-[400px] md:h-[calc(100vh-124px)] min-h-[400px] max-h-[700px] bg-gray-200"
         style={{
           backgroundImage: 'url(/imgs/h-4.jpg)',
           backgroundSize: 'cover',

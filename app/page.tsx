@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex flex-col w-full bg-white">
       
       {/* Hero Section Container */}
-      <section className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-12 mt-4 mb-16">
+      <section className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-12  mb-16">
         
         {/* Main Image Container */}
         <div 
@@ -25,7 +25,7 @@ export default function Home() {
         >
           {/* Dark Polygon Overlay on the Left */}
           <div 
-            className="absolute top-0 left-0 h-full w-full bg-[#1c1c1c] z-10"
+            className="absolute top-0 left-0 h-full w-full  z-10"
             style={{
               clipPath: 'polygon(0 35%, 60% 100%, 0 100%)'
             }}

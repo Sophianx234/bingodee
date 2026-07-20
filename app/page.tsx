@@ -13,21 +13,25 @@ export default function Home() {
       {/* Hero Section Container */}
       <section className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-12  mb-16">
         
-        {/* Main Image Container */}
-        <div 
-          className="relative w-full h-[650px] bg-gray-200 overflow-hidden shadow-xl"
-          style={{
-            clipPath: 'polygon(6% 0, 94% 0, 100% 12%, 100% 100%, 0 100%, 0 12%)',
-            backgroundImage: 'url(/imgs/h-1.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          {/* Dark Polygon Overlay on the Left */}
+        {/* Main Wrapper Container */}
+        <div className="relative w-full h-[600px] md:h-[calc(100vh-60px)] min-h-[500px] max-h-[900px]">
+          
+          {/* Hexagonal Image Background Layer */}
           <div 
-            className="absolute top-0 left-0 h-full w-full  z-10"
+            className="absolute inset-0 bg-gray-200 overflow-hidden shadow-xl"
             style={{
-              clipPath: 'polygon(0 35%, 60% 100%, 0 100%)'
+              clipPath: 'polygon(0 0%, 85% 0, 100% 25%, 100% 100%, 59% 100%, 0 20%)',
+              backgroundImage: 'url(/imgs/h-1.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          ></div>
+
+          {/* Dark Polygon Overlay overlapping the image */}
+          <div 
+            className="absolute top-0 left-0 h-full w-full bg-[#1c1c1c] z-10 opacity-95"
+            style={{
+              clipPath: 'polygon(0 20%, 59% 100%, 0 100%)'
             }}
           ></div>
 
@@ -51,7 +55,7 @@ export default function Home() {
           </div>
           
           {/* Stats Section - Positioned at the bottom right */}
-          <div className="absolute bottom-0 right-0 bg-white z-20 flex items-center justify-between px-10 py-8 w-full max-w-[700px] shadow-[-10px_-10px_30px_rgba(0,0,0,0.05)]">
+          <div className="absolute bottom-0 right-0 bg-white z-20 flex items-center justify-between px-10 py-8 w-full max-w-[700px] ">
             <div className="flex flex-col items-center text-center">
               <span className="text-[34px] font-extrabold text-[#171717]">13+</span>
               <span className="text-[13px] font-bold text-[#171717] mt-1 leading-[1.3]">Years of<br/>Excellence</span>

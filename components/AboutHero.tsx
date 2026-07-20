@@ -11,8 +11,8 @@ export default function AboutHero() {
           backgroundImage: 'url(/imgs/h-3.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          // Top-right corner cut
-          clipPath: 'polygon(0 0, 90% 0, 100% 15%, 100% 100%, 0 100%)'
+          // Hexagonal/Geometric cut based on user coordinates
+          clipPath: 'polygon(0% 0%, 75% 0%, 100% 33.6%, 100% 100%, 58.6% 100%, 0% 33.6%)'
         }}
       ></div>
 

@@ -10,7 +10,7 @@ function Hero() {
       <div 
         className="relative w-full h-[600px] md:h-[calc(100vh-96px)] min-h-[500px] max-h-[900px] bg-gray-200 overflow-hidden shadow-xl"
           style={{
-            clip-path: `polygon(18.95% 24.94%, 60.85% 24.94%, 74.81% 36.66%, 74.81% 59.79%, 51.68% 59.79%, 18.95% 36.66%)`,
+            clipPath: `polygon(18.95% 24.94%, 60.85% 24.94%, 100.81% 36.66%, 74.81% 59.79%, 51.68% 59.79%, 18.95% 36.66%)`,
             backgroundImage: 'url(/imgs/h-1.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -18,15 +18,12 @@ function Hero() {
         >
           {/* Dark Polygon Overlay on the Left */}
           {/* This dark shape starts midway down the left side and slants to the bottom right. */}
-          <div 
-            className="absolute top-0 left-0 h-full w-full bg-[#1c1c1c] z-10"
-            style={{
-              clipPath: 'polygon(0 35%, 60% 100%, 0 100%)'
-            }}
-          ></div>
+        
 
           {/* Content Overlaid on the Dark Area */}
-          <div className="absolute bottom-0 left-0 w-full h-full flex flex-col justify-end p-8 md:p-12 lg:pb-16 lg:pl-16 z-20 max-w-[650px]">
+          <div className="absolute bottom-0 left-0 w-full h-full flex flex-col justify-end p-8 md:p-12 lg:pb-16 lg:pl-16 z-20 max-w-[650px]"
+          style={{
+          }}>
             <h1 className="text-4xl md:text-5xl lg:text-[52px] font-bold leading-[1.15] mb-5 tracking-tight">
               <span className="text-[#00e5ff]">Engineering</span> <span className="text-white">Solutions</span><br/>
               <span className="text-white">Built for </span><span className="text-[#ffc107]">Industry.</span>
@@ -46,7 +43,7 @@ function Hero() {
           
           {/* Stats Section - Positioned at the bottom right */}
           {/* In the design, this sits in the bottom right corner, acting as a white cutout over the image. */}
-          <div className="absolute bottom-0 right-0 bg-white z-20 flex items-center justify-between px-10 py-8 w-full max-w-[700px] shadow-[-10px_-10px_30px_rgba(0,0,0,0.05)]">
+          <div className="absolute bottom-0 right-0 bg-white z-20 flex items-center justify-between px-10 py-8 w-full max-w-[700px] ">
             <div className="flex flex-col items-center text-center">
               <span className="text-[34px] font-extrabold text-[#171717]">13+</span>
               <span className="text-[13px] font-bold text-[#171717] mt-1 leading-[1.3]">Years of<br/>Excellence</span>

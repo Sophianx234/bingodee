@@ -1,0 +1,140 @@
+'use client';
+
+import { useRef } from 'react';
+import Link from 'next/link';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+export default function ServicesSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+    }
+  };
+
+  const services = [
+    {
+      title: "Engineering Services",
+      titleColor: "text-[#171717]",
+      bgColor: "bg-[#ffc107]",
+      desc: "Civil, structural and construction management solutions."
+    },
+    {
+      title: "Engineering Supplies",
+      titleColor: "text-white",
+      bgColor: "bg-[#6592ff]",
+      desc: "Reliable supply of industrial materials, pumps, valves, piping systems, steel products and more."
+    },
+    {
+      title: "Welding & Fabrication",
+      titleColor: "text-[#171717]",
+      bgColor: "bg-[#00e5ff]",
+      desc: "Precision fabrication and welding services delivered from our modern workshop."
+    },
+    {
+      title: "Industrial Supplies",
+      titleColor: "text-white",
+      bgColor: "bg-[#f59e0b]",
+      desc: "Supply of PPE, office equipment, and general merchandise for industrial scale needs."
+    },
+    {
+      title: "Project Consultation",
+      titleColor: "text-white",
+      bgColor: "bg-[#8b5cf6]",
+      desc: "Expert technical assessment, quotation, and full project lifecycle support."
+    }
+  ];
+
+  return (
+    <section className="w-full bg-white py-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        {/* Header with lines */}
+        <div className="flex items-center justify-center mb-16">
+          <div className="h-[1px] bg-gray-300 flex-grow max-w-[200px]"></div>
+          <h3 className="mx-6 text-[16px] md:text-[18px] font-bold text-gray-500 tracking-wide">
+            Our Services
+          </h3>
+          <div className="h-[1px] bg-gray-300 flex-grow max-w-[200px]"></div>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="relative mb-12">
+          <div 
+            ref={scrollContainerRef}
+            className="flex space-x-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {services.map((service, idx) => (
+              <div 
+                key={idx} 
+                className="relative flex-none w-[300px] md:w-[350px] h-[320px] snap-start group"
+              >
+                {/* Colored Top Rectangle */}
+                <div className={`absolute top-0 left-0 w-full h-[150px] ${service.bgColor} p-6`}>
+                  <h4 className={`text-[17px] font-bold ${service.titleColor}`}>
+                    {service.title}
+                  </h4>
+                </div>
+
+                {/* Dark Polygon Overlaid */}
+                <div 
+                  className="absolute bottom-0 left-0 w-full h-[250px] bg-[#1c1c1c] p-6 flex items-end pb-12 transition-transform duration-300 group-hover:translate-y-[-5px]"
+                  style={{
+                    clipPath: 'polygon(0 30%, 100% 0, 100% 85%, 85% 100%, 0 100%)'
+                  }}
+                >
+                  <p className="text-gray-300 text-[14px] leading-relaxed max-w-[90%]">
+                    {service.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Controls */}
+        <div className="flex items-center justify-between mt-4">
+          <Link 
+            href="/services" 
+            className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3 transition-colors shadow-sm rounded-sm"
+          >
+            Explore Services
+          </Link>
+          
+          <div className="flex space-x-4">
+            <button 
+              onClick={scrollLeft}
+              className="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors"
+              aria-label="Previous service"
+            >
+              <ChevronLeft className="w-6 h-6 text-slate-700" />
+            </button>
+            <button 
+              onClick={scrollRight}
+              className="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors"
+              aria-label="Next service"
+            >
+              <ChevronRight className="w-6 h-6 text-slate-700" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+      
+      {/* Hide scrollbar styles using global css block */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}} />
+    </section>
+  );
+}

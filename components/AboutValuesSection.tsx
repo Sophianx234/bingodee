@@ -14,7 +14,7 @@ export default function AboutValuesSection() {
       title: "Integrity",
       image: "/imgs/values/v-1.jpg",
       icon: <ShieldCheck className="w-6 h-6" strokeWidth={2.5} />,
-      iconPos: "top-right",
+      iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
     },
@@ -23,8 +23,8 @@ export default function AboutValuesSection() {
       image: "/imgs/values/v-2.jpg",
       icon: <Gem className="w-6 h-6" strokeWidth={2.5} />,
       iconPos: "bottom-right",
-      textColor: "text-[#1a1a1a]",
-      iconColor: "text-[#1a1a1a]",
+      textColor: "text-white",
+      iconColor: "text-white",
     },
     {
       title: "Safety",
@@ -73,23 +73,23 @@ export default function AboutValuesSection() {
       </div>
 
       {/* Grid of Values */}
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto">
+      <div className="w-full flex flex-wrap lg:flex-nowrap h-auto lg:h-[400px]">
         {values.map((val, index) => (
           <div 
             key={index} 
-            className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-[350px] group overflow-hidden"
+            className="relative w-1/2 md:w-1/3 lg:w-auto lg:flex-1 aspect-[4/5] lg:aspect-auto lg:h-full group overflow-hidden transition-all duration-500 ease-in-out lg:hover:flex-[2]"
           >
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out "
               style={{ backgroundImage: `url(${val.image})` }}
             ></div>
             
-            {/* Optional Overlay for readability (can be tweaked or removed) */}
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+            {/* Optional Overlay for readability */}
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500"></div>
 
             {/* Text Overlay */}
-            <h3 className={`absolute bottom-6 left-6 text-lg md:text-[19px] font-semibold ${val.textColor} z-10`}>
+            <h3 className={`absolute bottom-6 left-6 text-lg md:text-[19px] font-semibold ${val.textColor} z-10 transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#6592ff]`}>
               {val.title}
             </h3>
 
@@ -97,7 +97,7 @@ export default function AboutValuesSection() {
             <div 
               className={`absolute z-10 ${val.iconColor} ${
                 val.iconPos === 'top-right' ? 'top-6 right-6' : 'bottom-6 right-6'
-              }`}
+              } transition-all duration-500 group-hover:scale-110 group-hover:text-[#6592ff]`}
             >
               {val.icon}
             </div>

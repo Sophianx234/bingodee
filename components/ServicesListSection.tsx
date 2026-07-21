@@ -17,7 +17,7 @@ export default function ServicesListSection() {
           {/* Blue Background */}
           <div 
             className="absolute top-0 left-0 w-[95%] lg:w-[90%] h-[50%] bg-[#6592ff]"
-            style={{ clipPath: 'polygon(0 0, 95% 0, 100% 15%, 100% 100%, 0 100%)' }}
+            style={{ clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' }}
           >
             <h3 className="absolute top-8 left-8 md:top-12 md:left-12 text-2xl md:text-[28px] lg:text-[32px] font-semibold text-[#1a1a1a]">
               Engineering Services

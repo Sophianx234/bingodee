@@ -2,16 +2,37 @@
 
 import { useState } from 'react';
 import { Navigation } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HowWeWorkSection() {
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState<number | null>(0);
 
   const steps = [
-    "Consultation",
-    "Technical Assessment",
-    "Quotation",
-    "Supply & Delivery",
-    "Project Support"
+    {
+      title: "Consultation",
+      description: "We start by understanding your unique requirements, technical specifications, and project goals to ensure we align perfectly with your vision.",
+      image: "/imgs/h-2.png"
+    },
+    {
+      title: "Technical Assessment",
+      description: "Our experts conduct a thorough assessment of your needs, evaluating structural, mechanical, and material requirements to propose the most robust solutions.",
+      image: "/imgs/h-3.jpg"
+    },
+    {
+      title: "Quotation",
+      description: "We provide a transparent, detailed, and competitive quotation covering all aspects of procurement, fabrication, or engineering services required.",
+      image: "/imgs/h-4.jpg"
+    },
+    {
+      title: "Supply & Delivery",
+      description: "Leveraging our robust supply chain, we source top-tier industrial materials and deliver them directly to your site safely and on schedule.",
+      image: "/imgs/h-1.jpg"
+    },
+    {
+      title: "Project Support",
+      description: "Our commitment doesn't end at delivery. We provide ongoing technical support, installation guidance, and maintenance consultation for total peace of mind.",
+      image: "/imgs/team/t-3.jpg" 
+    }
   ];
 
   return (
@@ -29,18 +50,36 @@ export default function HowWeWorkSection() {
               const isActive = activeStep === index;
               return (
                 <div 
-                  key={step}
-                  onClick={() => setActiveStep(index)}
-                  className={`flex items-center justify-between py-4 cursor-pointer transition-all duration-300 border-b-2 ${
+                  key={step.title}
+                  onClick={() => setActiveStep(isActive ? null : index)}
+                  className={`flex flex-col cursor-pointer transition-all duration-300 border-b-2 ${
                     isActive ? 'border-white' : 'border-[#476bb3]'
                   }`}
                 >
-                  <span className="text-[17px] font-semibold text-white tracking-wide">
-                    {step}
-                  </span>
-                  <div className={`transform rotate-45 transition-colors duration-300 ${isActive ? 'text-white' : 'text-[#6592ff]'}`}>
-                    <Navigation className={`w-5 h-5 ${isActive ? 'fill-white' : 'fill-[#6592ff]'}`} />
+                  <div className="flex items-center justify-between py-4">
+                    <span className="text-[17px] font-semibold text-white tracking-wide">
+                      {step.title}
+                    </span>
+                    <div className={`transform transition-transform duration-300 ${isActive ? 'rotate-90 text-white' : 'rotate-45 text-[#6592ff]'}`}>
+                      <Navigation className={`w-5 h-5 ${isActive ? 'fill-white' : 'fill-[#6592ff]'}`} />
+                    </div>
                   </div>
+                  
+                  <AnimatePresence>
+                    {isActive && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-gray-300 pb-5 pr-8 text-[15px] leading-relaxed">
+                          {step.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               );
             })}
@@ -57,16 +96,23 @@ export default function HowWeWorkSection() {
               style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)' }}
             ></div>
             
-            {/* Main Image */}
-            <div 
-              className="absolute top-0 left-0 w-full h-full shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
-              style={{
-                backgroundImage: 'url(/imgs/h-2.png)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
-              }}
-            ></div>
+            {/* Main Image with Crossfade */}
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeStep ?? 'default'}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+                className="absolute top-0 left-0 w-full h-full shadow-2xl"
+                style={{
+                  backgroundImage: `url(${activeStep !== null ? steps[activeStep].image : steps[0].image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
+                }}
+              />
+            </AnimatePresence>
           </div>
 
           <button className="bg-[#6592ff] hover:bg-[#4d7ef5] text-white font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-lg">

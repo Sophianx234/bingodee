@@ -45,10 +45,10 @@ export default function IndustrialSolutionsSection() {
             
             {/* Colored Background Block */}
             <div 
-              className={`absolute top-0 left-0 w-[95%] h-[60%] ${card.color} rounded-sm`}
-              style={{ clipPath: 'polygon(0 0, 96% 0, 100% 15%, 100% 100%, 0 100%)' }}
+              className={`absolute -top-3 left-0 w-[95%] h-[40%] ${card.color} rounded-sm`}
+              style={{ clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' }}
             >
-              <h3 className="absolute top-6 left-6 max-w-[75%] text-[17px] md:text-[18px] font-bold text-[#1c1c1c] leading-tight">
+              <h3 className="absolute top-15 left-6 max-w-[75%] text-[17px] md:text-[16px] font-bold text-[#1c1c1c] leading-tight">
                 {card.title}
               </h3>
             </div>
@@ -62,7 +62,7 @@ export default function IndustrialSolutionsSection() {
             >
               {/* The Image */}
               <div 
-                className="absolute inset-0 bg-gray-500 transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 bg-gray-500 transition-transform duration-700 "
                 style={{
                   backgroundImage: `url(${card.image})`,
                   backgroundSize: 'cover',

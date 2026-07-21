@@ -20,7 +20,7 @@ export default function Home() {
           <div 
             className="absolute inset-0 bg-gray-200 overflow-hidden shadow-xl"
             style={{
-              clipPath: 'polygon(0 0%, 85% 0, 100% 25%, 100% 100%, 59% 100%, 0 20%)',
+              clipPath: 'polygon(0% 0%, 93% 0, 100% 15%, 100% 100%, 114.8% 100%, 0% 55%)',
               backgroundImage: 'url(/imgs/h-1.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -31,7 +31,7 @@ export default function Home() {
           <div 
             className="absolute top-0 left-0 h-full w-full bg-[#1c1c1c] z-10 opacity-95"
             style={{
-              clipPath: 'polygon(0 20%, 59% 100%, 0 100%)'
+              clipPath: 'polygon(0 -65%, 59% 100%, 0 100%)'
             }}
           ></div>
 

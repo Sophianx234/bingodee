@@ -105,7 +105,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom Controls */}
-        <div className="relative z-50 flex items-center justify-between -mt-24 px-6 lg:px-12">
+        <div className="relative z-10 flex items-center justify-between -mt-24 px-6 ">
           <Link 
             href="/services" 
             className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3 transition-colors "

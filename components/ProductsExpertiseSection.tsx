@@ -19,15 +19,15 @@ export default function ProductsExpertiseSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           
           {/* Left Image Box */}
-          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[480px]">
+          <div className="relative w-full h-[300px] md:h-[40rem] ">
             {/* The actual image container */}
             <div 
-              className="absolute top-0 left-0 w-full h-full bg-gray-200 shadow-lg"
+              className="absolute top-0 left-0  w-full h-full bg-gray-200 shadow-lg"
               style={{
                 backgroundImage: 'url(/imgs/h-2.png)', // Placeholder for pipes
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundPosition: 'center',
-                clipPath: 'polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)'
+                clipPath: 'polygon(0% 25.94%, 81.05% 25.94%, 99.64% 44.39%, 99.64% 75.37%, 57.61% 75.37%, 0% 47.94%)'
               }}
             ></div>
             {/* The Blue Polygon Overlay on Bottom Left */}
@@ -40,15 +40,15 @@ export default function ProductsExpertiseSection() {
           </div>
 
           {/* Right Image Box */}
-          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[480px]">
+          <div className="relative w-full h-[300px] md:h-[40rem]">
             {/* The actual image container */}
             <div 
-              className="absolute top-0 left-0 w-full h-full bg-gray-200 shadow-lg"
+              className="absolute top-0 left-0 w-full h-full bg-gray-200 "
               style={{
                 backgroundImage: 'url(/imgs/h-1.jpg)', // Placeholder for flanges
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundPosition: 'center',
-                clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 15%)'
+                clipPath: 'polygon(100% 25.94%, 18.95% 25.94%, 0.36% 44.39%, 0.36% 75.37%, 42.39% 75.37%, 100% 47.94%)'
               }}
             ></div>
             {/* The Blue Polygon Overlay on Bottom Right */}

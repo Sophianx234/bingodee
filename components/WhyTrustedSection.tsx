@@ -66,7 +66,7 @@ export default function WhyTrustedSection() {
                 {feature.title}
               </h4>
               
-              <div className="w-[64px] h-[64px] bg-[#1a1a1a] flex items-center justify-center mb-6 shadow-md rounded-[2px]">
+              <div className="w-[64px] h-[64px] bg-[#1a1a1a] flex items-center justify-center mb-6  ">
                 {feature.icon}
               </div>
               

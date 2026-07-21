@@ -22,7 +22,7 @@ export default function ProductsExpertiseSection() {
           <div className="relative w-full h-[300px] md:h-[40rem] ">
             {/* The actual image container */}
             <div 
-              className="absolute top-0 left-0  w-full h-full bg-gray-200 shadow-lg"
+              className="absolute top-0 left-0 z-10 w-full h-full bg-gray-200 shadow-lg"
               style={{
                 backgroundImage: 'url(/imgs/h-2.png)', // Placeholder for pipes
                 backgroundSize: 'contain',
@@ -32,9 +32,9 @@ export default function ProductsExpertiseSection() {
             ></div>
             {/* The Blue Polygon Overlay on Bottom Left */}
             <div 
-              className="absolute bottom-0 left-0 w-full h-[45%] bg-[#6592ff] z-10 pointer-events-none"
+              className="absolute bottom-19  -left-1 w-full h-[35%] bg-[#6592ff] z-0 pointer-events-none"
               style={{
-                clipPath: 'polygon(0 35%, 65% 100%, 0 100%)'
+                clipPath: 'polygon(0% 7.18%, 81.46% 7.18%, 100% 7.16%, 100% 52.6%, 86.9% 52.6%, 99.75% 68.1%, 99.75% 76.24%, 68.32% 76.24%, 0% 76.24%)'
               }}
             ></div>
           </div>
@@ -43,7 +43,7 @@ export default function ProductsExpertiseSection() {
           <div className="relative w-full h-[300px] md:h-[40rem]">
             {/* The actual image container */}
             <div 
-              className="absolute top-0 left-0 w-full h-full bg-gray-200 "
+              className="absolute top-0 z-10 left-0 w-full h-full bg-gray-200 "
               style={{
                 backgroundImage: 'url(/imgs/h-1.jpg)', // Placeholder for flanges
                 backgroundSize: 'contain',
@@ -53,11 +53,11 @@ export default function ProductsExpertiseSection() {
             ></div>
             {/* The Blue Polygon Overlay on Bottom Right */}
             <div 
-              className="absolute bottom-0 left-0 w-full h-[45%] bg-[#6592ff] z-10 pointer-events-none"
-              style={{
-                clipPath: 'polygon(100% 35%, 100% 100%, 35% 100%)'
-              }}
-            ></div>
+  className="absolute bottom-19 -right-1 w-full h-[35%] bg-[#6592ff] z-0 pointer-events-none"
+  style={{
+    clipPath: 'polygon(100% 7.18%, 18.54% 7.18%, 0% 7.16%, 0% 52.6%, 13.1% 52.6%, 0.25% 68.1%, 0.25% 76.24%, 31.68% 76.24%, 100% 76.24%)'
+  }}
+></div>
           </div>
 
         </div>

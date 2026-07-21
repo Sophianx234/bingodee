@@ -16,7 +16,7 @@ export default function CTASection() {
           <div>
             <Link 
               href="/contact" 
-              className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-sm rounded-sm"
+              className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-sm "
             >
               Contact Our Team
             </Link>
@@ -24,19 +24,19 @@ export default function CTASection() {
         </div>
 
         {/* Right Side: Image with Geometric Cut */}
-        <div className="w-full md:w-1/2 h-[350px] md:h-[450px] lg:h-[500px] relative mt-8 md:mt-0">
+        <div className="w-full md:w-[30rem] h-[350px] md:h-[35rem]  relative mt-8 md:mt-0">
           <div 
             className="absolute top-0 right-0 w-full h-full bg-gray-200"
             style={{
               backgroundImage: 'url(/imgs/cta-1.png)',
-              backgroundSize: 'cover',
+              backgroundSize: 'contain',
               backgroundPosition: 'center',
               // Polygon matches s-4.png right image:
               // top-left corner is square
               // top-right corner is cut diagonally
               // bottom-right corner is square
               // bottom-left corner is cut with a long steep diagonal
-              clipPath: 'polygon(0 0, 85% 0, 100% 15%, 100% 100%, 25% 100%, 0 45%)'
+              clipPath: 'polygon(0% 25.19%, 80.8% 25.19%, 100% 38.4%, 100% 74.81%, 17.46% 74.81%, 0% 54.61%)'
             }}
           ></div>
         </div>

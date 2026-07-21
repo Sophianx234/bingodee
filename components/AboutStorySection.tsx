@@ -4,7 +4,7 @@ export default function AboutStorySection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-12 lg:gap-24">
         
         {/* Left Side: Image with Geometric Cut */}
-        <div className="w-full md:w-1/2 h-[350px] md:h-[450px] lg:h-[500px] relative">
+        <div className="w-full md:w-1/2 h-[23rem] scale-100 relative">
           <div 
             className="absolute top-0 left-0 w-full h-full bg-gray-200 shadow-lg"
             style={{
@@ -12,7 +12,7 @@ export default function AboutStorySection() {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               // Top-left: square, Top-right: cut, Bottom-right: square, Bottom-left: cut
-              clipPath: 'polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%)'
+              clipPath: 'polygon(0% 0%, 80.8% 0%, 100% 26.6%, 100% 100%, 17.5% 100%, 0% 59.3%)'
             }}
           ></div>
         </div>

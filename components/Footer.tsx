@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white mt-12 border-t-[8px] border-[#1c1c1c]">
+    <footer className="w-full bg-white   ">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-16">
         
         {/* Top Section: Logo and Socials */}

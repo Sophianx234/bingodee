@@ -7,13 +7,15 @@ export default function AboutMissionVision() {
         <div className="relative w-full h-[320px] lg:h-[350px]">
           {/* Blue Background */}
           <div 
-            className="absolute top-0 left-0 w-[95%] h-[60%] bg-[#6592ff]"
-            style={{ clipPath: 'polygon(0 0, 96% 0, 100% 15%, 100% 100%, 0 100%)' }}
-          >
-            <h3 className="absolute top-8 left-10 lg:left-14 text-[22px] lg:text-[24px] font-semibold text-[#1c1c1c]">
-              Our Mission
-            </h3>
-          </div>
+  className="absolute -top-5 left-0 w-[95%] h-[60%] bg-[#6592ff]"
+  style={{ 
+    clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' 
+  }}
+>
+  <h3 className="absolute top-14 left-10 lg:left-14 text-[22px] lg:text-[24px] font-semibold text-[#1c1c1c]">
+    Our Mission
+  </h3>
+</div>
           
           {/* Dark Foreground */}
           <div 
@@ -32,10 +34,10 @@ export default function AboutMissionVision() {
         <div className="relative w-full h-[320px] lg:h-[350px]">
           {/* Cyan Background */}
           <div 
-            className="absolute top-0 left-0 w-[95%] h-[60%] bg-[#00e5ff]"
-            style={{ clipPath: 'polygon(0 0, 96% 0, 100% 15%, 100% 100%, 0 100%)' }}
+            className="absolute -top-5 left-0  w-[95%] h-[60%] bg-[#00e5ff]"
+            style={{ clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' }}
           >
-            <h3 className="absolute top-8 left-10 lg:left-14 text-[22px] lg:text-[24px] font-semibold text-[#1c1c1c]">
+            <h3 className="absolute top-14 left-10 lg:left-14  text-[22px] lg:text-[24px] font-semibold text-[#1c1c1c]">
               Our Vision
             </h3>
           </div>

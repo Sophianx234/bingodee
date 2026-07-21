@@ -34,7 +34,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 top-0 start-0 bg-white transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+    <nav className={`fixed w-full z-50 top-0 start-0 bg-white transition-shadow duration-300 ${isScrolled ? 'shadow-sm' : ''}`}>
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 lg:px-12 py-3">
         
         {/* Logo */}
@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="flex md:order-2 items-center">
           <Link 
             href="/contact" 
-            className="hidden md:inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[14px] px-6 py-2.5 transition-colors shadow-sm rounded-sm tracking-wide"
+            className="hidden md:inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[14px] px-6 py-2.5 transition-colors tracking-wide"
           >
             Contact
           </Link>

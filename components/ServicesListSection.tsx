@@ -16,21 +16,24 @@ export default function ServicesListSection() {
           
           {/* Blue Background */}
           <div 
-            className="absolute top-0 left-0 w-[95%] lg:w-[90%] h-[50%] bg-[#6592ff]"
+            className="absolute -top-32 left-0 w-[95%] lg:w-[90%] h-[70%] bg-[#6592ff]"
             style={{ clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' }}
           >
-            <h3 className="absolute top-8 left-8 md:top-12 md:left-12 text-2xl md:text-[28px] lg:text-[32px] font-semibold text-[#1a1a1a]">
+            <h3 
+              className="absolute left-8 md:left-12 text-2xl md:text-[28px] lg:text-[32px] font-semibold text-[#1a1a1a]"
+              style={{ top: '30%' }}
+            >
               Engineering Services
             </h3>
           </div>
 
           {/* Dark Foreground */}
           <div 
-            className="absolute bottom-0 left-0 w-full h-[85%] bg-[#1c1c1c] shadow-2xl flex flex-col md:flex-row items-center p-8 md:p-12 lg:p-16 gap-8 lg:gap-16"
-            style={{ clipPath: 'polygon(0 25%, 100% 5%, 100% 85%, 85% 100%, 0 100%)' }}
+            className="absolute -bottom-60 left-0 w-full h-[185%] bg-[#1c1c1c] shadow-2xl flex flex-col md:flex-row items-center p-8 md:p-12 lg:p-16 gap-8 lg:gap-16"
+            style={{ clipPath: 'polygon(58.6% 25.44%, 100% 25.44%, 100% 60.35%, 85.79% 74.31%, 0% 74.31%, 0% 50.12%)' }}
           >
             {/* Left: Services List */}
-            <div className="w-full md:w-[45%] text-gray-200 mt-28 md:mt-16 ml-0 md:ml-4 lg:ml-8">
+            <div className="w-full md:w-[45%] text-gray-200 mt-28 md:mt-32 ml-0 md:ml-4 lg:ml-8">
               <ul className="space-y-4 lg:space-y-5 text-[16px] lg:text-[18px] font-medium tracking-wide">
                 <li className="flex items-center gap-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-white opacity-80"></span>

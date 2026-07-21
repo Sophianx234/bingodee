@@ -89,7 +89,7 @@ export default function AboutValuesSection() {
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500"></div>
 
             {/* Text Overlay */}
-            <h3 className={`absolute bottom-6 left-6 text-lg md:text-[19px] font-semibold ${val.textColor} z-10 transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#6592ff]`}>
+            <h3 className={`absolute bottom-6 left-6 text-lg md:text-[19px] font-semibold ${val.textColor} z-10 transition-all duration-500 group-hover:-translate-y-1 group-hover:text-primary`}>
               {val.title}
             </h3>
 
@@ -97,7 +97,7 @@ export default function AboutValuesSection() {
             <div 
               className={`absolute z-10 ${val.iconColor} ${
                 val.iconPos === 'top-right' ? 'top-6 right-6' : 'bottom-6 right-6'
-              } transition-all duration-500 group-hover:scale-110 group-hover:text-[#6592ff]`}
+              } transition-all duration-500 group-hover:scale-110 group-hover:text-primary`}
             >
               {val.icon}
             </div>

@@ -11,7 +11,7 @@ export default function WhoWeAreSection() {
             
             {/* The blue polygon background sitting slightly offset and covering the bottom-left */}
             {/* <div 
-              className="absolute -bottom-8 -left-8 w-[90%] h-[50%] bg-[#6592ff] z-0"
+              className="absolute -bottom-8 -left-8 w-[90%] h-[50%] bg-primary z-0"
               style={{
                 clipPath: 'polygon(0 40%, 100% 100%, 0 100%)'
               }}
@@ -36,7 +36,7 @@ export default function WhoWeAreSection() {
             {/* In the design, the blue shape actually sits on TOP of the bottom-left of the image, slanting upwards */}
             {/* Let's overlay a solid blue polygon on the bottom left corner to precisely match s-2.png */}
             <div 
-              className="absolute bottom-14 -left-6 w-[108%] h-[40%] bg-[#6592ff] z-0 pointer-events-none"
+              className="absolute bottom-14 -left-6 w-[108%] h-[40%] bg-primary z-0 pointer-events-none"
               style={{
                 // A wedge starting higher on the left and slanting down to the right, sitting right at the bottom
                 clipPath: 'polygon(0% 7.18%, 81.46% 7.18%, 100% 7.16%, 100% 52.6%, 86.9% 52.6%, 99.75% 68.1%, 99.75% 76.24%, 68.32% 76.24%, 0% 76.24%)'
@@ -56,7 +56,7 @@ export default function WhoWeAreSection() {
             <div>
               <Link 
                 href="/about" 
-                className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3.5 transition-colors  "
+                className="inline-flex text-white bg-primary hover:bg-primary-hover font-semibold text-[15px] px-8 py-3.5 transition-colors  "
               >
                 Learn More About Us
               </Link>

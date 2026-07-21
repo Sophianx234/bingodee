@@ -7,7 +7,7 @@ export default function AboutMissionVision() {
         <div className="relative w-full h-[320px] lg:h-[350px]">
           {/* Blue Background */}
           <div 
-  className="absolute -top-5 left-0 w-[95%] h-[60%] bg-[#6592ff]"
+  className="absolute -top-5 left-0 w-[95%] h-[60%] bg-primary"
   style={{ 
     clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' 
   }}

@@ -60,8 +60,8 @@ export default function HowWeWorkSection() {
                     <span className="text-[17px] font-semibold text-white tracking-wide">
                       {step.title}
                     </span>
-                    <div className={`transform transition-transform duration-300 ${isActive ? 'rotate-90 text-white' : 'rotate-45 text-[#6592ff]'}`}>
-                      <Navigation className={`w-5 h-5 ${isActive ? 'fill-white' : 'fill-[#6592ff]'}`} />
+                    <div className={`transform transition-transform duration-300 ${isActive ? 'rotate-90 text-white' : 'rotate-45 text-primary'}`}>
+                      <Navigation className={`w-5 h-5 ${isActive ? 'fill-white' : 'fill-primary'}`} />
                     </div>
                   </div>
                   
@@ -92,7 +92,7 @@ export default function HowWeWorkSection() {
           <div className="relative w-full max-w-[700px] aspect-[16/9] mb-8">
             {/* Blue offset background */}
             <div 
-              className="absolute -bottom-4 -left-4 w-full h-full bg-[#6592ff] rounded-sm transition-transform duration-500 hover:scale-[1.02]"
+              className="absolute -bottom-4 -left-4 w-full h-full bg-primary rounded-sm transition-transform duration-500 hover:scale-[1.02]"
               style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)' }}
             ></div>
             
@@ -115,7 +115,7 @@ export default function HowWeWorkSection() {
             </AnimatePresence>
           </div>
 
-          <button className="bg-[#6592ff] hover:bg-[#4d7ef5] text-white font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-lg">
+          <button className="bg-primary hover:bg-primary-hover text-white font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-lg">
             Request a Quote
           </button>
 

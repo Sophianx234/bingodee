@@ -11,32 +11,32 @@ export default function WhyTrustedSection() {
   const features = [
     {
       title: "Reliable Supply Chain",
-      icon: <Waypoints className="w-6 h-6 text-[#6592ff]" />,
+      icon: <Waypoints className="w-6 h-6 text-primary" />,
       desc: "We ensure consistent product availability through strong local and international partnerships."
     },
     {
       title: "Qualified Engineers",
-      icon: <HardHat className="w-6 h-6 text-[#6592ff]" />,
+      icon: <HardHat className="w-6 h-6 text-primary" />,
       desc: "Our experienced engineering professionals provide practical technical solutions."
     },
     {
       title: "Safety First",
-      icon: <ShieldCheck className="w-6 h-6 text-[#6592ff]" />,
+      icon: <ShieldCheck className="w-6 h-6 text-primary" />,
       desc: "Every project is delivered with safety, quality and compliance at its core."
     },
     {
       title: "Long-Term Partnerships",
-      icon: <Handshake className="w-6 h-6 text-[#6592ff]" />,
+      icon: <Handshake className="w-6 h-6 text-primary" />,
       desc: "We build lasting client relationships through transparency, trust and dependable service."
     },
     {
       title: "Affordable Solutions",
-      icon: <BadgeDollarSign className="w-6 h-6 text-[#6592ff]" />,
+      icon: <BadgeDollarSign className="w-6 h-6 text-primary" />,
       desc: "Competitive pricing without compromising quality."
     },
     {
       title: "Responsive Support",
-      icon: <Headset className="w-6 h-6 text-[#6592ff]" />,
+      icon: <Headset className="w-6 h-6 text-primary" />,
       desc: "Dedicated engineers who understand your operational needs."
     }
   ];

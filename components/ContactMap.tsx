@@ -32,7 +32,7 @@ export default function ContactMap() {
           ></iframe>
 
           {/* Decorative Blue Box overlapping slightly to anchor the design */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#6592ff] mix-blend-multiply opacity-80" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary mix-blend-multiply opacity-80" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#111827] opacity-80" style={{ clipPath: 'polygon(0 0, 0 100%, 100% 100%)' }}></div>
         </div>
       </div>

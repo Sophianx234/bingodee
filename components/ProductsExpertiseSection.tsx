@@ -10,7 +10,7 @@ export default function ProductsExpertiseSection() {
           <h2 className="text-2xl md:text-[32px] font-semibold text-[#1f2937]">
             Products That Demonstrate Our Expertise
           </h2>
-          <Link href="/products" className="text-[#6592ff] font-bold text-[14px] hover:underline uppercase tracking-wider">
+          <Link href="/products" className="text-primary font-bold text-[14px] hover:underline uppercase tracking-wider">
             See More
           </Link>
         </div>
@@ -32,7 +32,7 @@ export default function ProductsExpertiseSection() {
             ></div>
             {/* The Blue Polygon Overlay on Bottom Left */}
             <div 
-              className="absolute bottom-19  -left-1 w-full h-[35%] bg-[#6592ff] z-0 pointer-events-none"
+              className="absolute bottom-19  -left-1 w-full h-[35%] bg-primary z-0 pointer-events-none"
               style={{
                 clipPath: 'polygon(0% 7.18%, 81.46% 7.18%, 100% 7.16%, 100% 52.6%, 86.9% 52.6%, 99.75% 68.1%, 99.75% 76.24%, 68.32% 76.24%, 0% 76.24%)'
               }}
@@ -53,7 +53,7 @@ export default function ProductsExpertiseSection() {
             ></div>
             {/* The Blue Polygon Overlay on Bottom Right */}
             <div 
-  className="absolute bottom-19 -right-1 w-full h-[35%] bg-[#6592ff] z-0 pointer-events-none"
+  className="absolute bottom-19 -right-1 w-full h-[35%] bg-primary z-0 pointer-events-none"
   style={{
     clipPath: 'polygon(100% 7.18%, 18.54% 7.18%, 0% 7.16%, 0% 52.6%, 13.1% 52.6%, 0.25% 68.1%, 0.25% 76.24%, 31.68% 76.24%, 100% 76.24%)'
   }}

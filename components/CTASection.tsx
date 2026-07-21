@@ -16,7 +16,7 @@ export default function CTASection() {
           <div>
             <Link 
               href="/contact" 
-              className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-sm "
+              className="inline-flex text-white bg-primary hover:bg-primary-hover font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-sm "
             >
               Contact Our Team
             </Link>

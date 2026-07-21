@@ -187,7 +187,7 @@ export default function AboutTeamSection() {
               {/* Blue Button */}
               <button 
                 onClick={() => setSelectedMember(member)}
-                className="absolute bottom-10 right-0 bg-[#6592ff] hover:bg-[#4d7ef5] text-white font-semibold text-[14px] px-6 py-3 transition-all duration-300 shadow-md z-30 flex items-center gap-1 group-hover:pr-4"
+                className="absolute bottom-10 right-0 bg-primary hover:bg-primary-hover text-white font-semibold text-[14px] px-6 py-3 transition-all duration-300 shadow-md z-30 flex items-center gap-1 group-hover:pr-4"
               >
                 Read Portfolio <ChevronRight className="w-4 h-4 opacity-0 -mr-4 group-hover:opacity-100 group-hover:mr-0 transition-all duration-300" />
               </button>
@@ -264,7 +264,7 @@ export default function AboutTeamSection() {
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                   {selectedMember.name}
                 </h3>
-                <p className="text-[#6592ff] font-semibold text-lg md:text-xl mb-6">
+                <p className="text-primary font-semibold text-lg md:text-xl mb-6">
                   {selectedMember.role}
                 </p>
                 <p className="text-gray-600 text-[16px] md:text-[17px] leading-relaxed">
@@ -274,17 +274,17 @@ export default function AboutTeamSection() {
                 <div className="mt-10 flex items-center justify-between">
                   <div className="flex gap-3">
                     {selectedMember.socials?.facebook && (
-                      <a href={selectedMember.socials.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-[#6592ff] text-gray-600 hover:text-white transition-colors">
+                      <a href={selectedMember.socials.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary text-gray-600 hover:text-white transition-colors">
                         <Facebook className="w-5 h-5" />
                       </a>
                     )}
                     {selectedMember.socials?.twitter && (
-                      <a href={selectedMember.socials.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-[#6592ff] text-gray-600 hover:text-white transition-colors">
+                      <a href={selectedMember.socials.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary text-gray-600 hover:text-white transition-colors">
                         <Twitter className="w-5 h-5" />
                       </a>
                     )}
                     {selectedMember.socials?.instagram && (
-                      <a href={selectedMember.socials.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-[#6592ff] text-gray-600 hover:text-white transition-colors">
+                      <a href={selectedMember.socials.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary text-gray-600 hover:text-white transition-colors">
                         <Instagram className="w-5 h-5" />
                       </a>
                     )}

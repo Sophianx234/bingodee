@@ -57,7 +57,7 @@ export default function Navbar() {
               href={link.path} 
               className={`text-[14px] font-semibold transition-colors ${
                 pathname === link.path 
-                  ? 'text-slate-800 pb-1 border-b-[3px] border-[#6592ff]' 
+                  ? 'text-slate-800 pb-1 border-b-[3px] border-primary' 
                   : 'text-slate-500 hover:text-slate-800'
               }`}
             >
@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="flex md:order-2 items-center">
           <Link 
             href="/contact" 
-            className="hidden md:inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[14px] px-6 py-2.5 transition-colors tracking-wide"
+            className="hidden md:inline-flex text-white bg-primary hover:bg-primary-hover font-semibold text-[14px] px-6 py-2.5 transition-colors tracking-wide"
           >
             Contact
           </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-3 px-4 rounded-md transition-colors ${
                     pathname === link.path
-                      ? 'bg-blue-50 text-[#6592ff] font-bold'
+                      ? 'bg-blue-50 text-primary font-bold'
                       : 'text-slate-700 hover:bg-gray-50'
                   }`}
                 >
@@ -110,7 +110,7 @@ export default function Navbar() {
               <Link 
                 href="/contact" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center py-3 px-4 rounded-md bg-[#6592ff] text-white font-bold hover:bg-[#4d7ef5] transition-colors shadow-sm"
+                className="block w-full text-center py-3 px-4 rounded-md bg-primary text-white font-bold hover:bg-primary-hover transition-colors shadow-sm"
               >
                 Contact
               </Link>

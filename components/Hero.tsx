@@ -34,7 +34,7 @@ function Hero() {
             <div>
               <Link 
                 href="/services" 
-                className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-sm rounded-sm"
+                className="inline-flex text-white bg-primary hover:bg-primary-hover font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-sm rounded-sm"
               >
                 Explore Services
               </Link>

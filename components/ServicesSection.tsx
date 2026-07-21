@@ -78,17 +78,17 @@ export default function ServicesSection() {
                 className="relative flex-none w-[300px] md:w-[350px] h-[320px] snap-start group"
               >
                 {/* Colored Top Rectangle */}
-                <div className={`absolute top-0 left-0 w-full h-[150px] ${service.bgColor} p-6`}>
-                  <h4 className={`text-[17px] font-bold ${service.titleColor}`}>
+                <div className={`absolute top-0 left-0 w-full h-[110px] ${service.bgColor} p-6`}>
+                  <h4 className={`text-[15px] font-bold ${service.titleColor}`}>
                     {service.title}
                   </h4>
                 </div>
 
                 {/* Dark Polygon Overlaid */}
                 <div 
-                  className="absolute bottom-0 left-0 w-full h-[250px] bg-[#1c1c1c] p-6 flex items-end pb-12 transition-transform duration-300 group-hover:translate-y-[-5px]"
+                  className="absolute -bottom-5 left-2 w-full h-[25rem] items-start z-0 bg-[#1c1c1c] p-6  pb-12 transition-transform duration-300 "
                   style={{
-                    clipPath: 'polygon(0 30%, 100% 0, 100% 85%, 85% 100%, 0 100%)'
+                    clipPath: 'polygon(58.6% 25.44%, 100% 25.44%, 100% 60.35%, 85.79% 74.31%, 0% 74.31%, 0% 50.12%)'
                   }}
                 >
                   <p className="text-gray-300 text-[14px] leading-relaxed max-w-[90%]">

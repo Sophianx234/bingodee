@@ -9,13 +9,15 @@ export default function ServicesSection() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+      const cardWidth = scrollContainerRef.current.firstElementChild?.clientWidth || 350;
+      scrollContainerRef.current.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+      const cardWidth = scrollContainerRef.current.firstElementChild?.clientWidth || 350;
+      scrollContainerRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
     }
   };
 
@@ -54,7 +56,7 @@ export default function ServicesSection() {
 
   return (
     <section className="w-full bg-white py-16">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1400px] mx-auto pl-6 ">
         
         {/* Header with lines */}
         <div className="flex items-center justify-center mb-16">
@@ -86,14 +88,16 @@ export default function ServicesSection() {
 
                 {/* Dark Polygon Overlaid */}
                 <div 
-                  className="absolute -bottom-5 left-2 w-full h-[25rem] items-start z-0 bg-[#1c1c1c] p-6  pb-12 transition-transform duration-300 "
+                  className="absolute -bottom-5 left-2 w-full h-[25rem] z-0 bg-[#1c1c1c] transition-transform duration-300 "
                   style={{
                     clipPath: 'polygon(58.6% 25.44%, 100% 25.44%, 100% 60.35%, 85.79% 74.31%, 0% 74.31%, 0% 50.12%)'
                   }}
                 >
-                  <p className="text-gray-300 text-[14px] leading-relaxed max-w-[90%]">
-                    {service.desc}
-                  </p>
+                  <div className="absolute w-full px-6 pr-12" style={{ top: '53%' }}>
+                    <p className="text-gray-300 text-[13px] leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -101,10 +105,10 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom Controls */}
-        <div className="flex items-center justify-between mt-4">
+        <div className="relative z-50 flex items-center justify-between -mt-24 px-6 lg:px-12">
           <Link 
             href="/services" 
-            className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3 transition-colors shadow-sm rounded-sm"
+            className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3 transition-colors "
           >
             Explore Services
           </Link>
@@ -112,14 +116,14 @@ export default function ServicesSection() {
           <div className="flex space-x-4">
             <button 
               onClick={scrollLeft}
-              className="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors"
+              className="w-12 h-12 flex items-center justify-center  transition-colors"
               aria-label="Previous service"
             >
               <ChevronLeft className="w-6 h-6 text-slate-700" />
             </button>
             <button 
               onClick={scrollRight}
-              className="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors"
+              className="w-12 h-12 flex items-center justify-center bg-white    transition-colors"
               aria-label="Next service"
             >
               <ChevronRight className="w-6 h-6 text-slate-700" />

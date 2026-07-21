@@ -10,21 +10,23 @@ export default function WhoWeAreSection() {
           <div className="w-full lg:w-1/2 relative">
             
             {/* The blue polygon background sitting slightly offset and covering the bottom-left */}
-            <div 
+            {/* <div 
               className="absolute -bottom-8 -left-8 w-[90%] h-[50%] bg-[#6592ff] z-0"
               style={{
                 clipPath: 'polygon(0 40%, 100% 100%, 0 100%)'
               }}
-            ></div>
+            ></div> */}
 
             {/* Main Image Container */}
             <div 
-              className="relative w-full h-[450px] md:h-[550px] bg-gray-200 z-10 overflow-hidden shadow-2xl"
+              className="relative w-full h-[450px] md:h-[37rem] scale-110  bg-gray-200 z-10 overflow-hidden "
               style={{
                 // Polygon cuts the top-right corner and bottom-left slightly to reveal the blue below
-                clipPath: 'polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%)',
+                clipPath: 'polygon(0% 24.88%, 81.34% 24.88%, 100% 38.06%, 100% 74.13%, 60.95% 74.13%, 35.7% 61.33%, 0% 43.64%)',
                 backgroundImage: 'url(/imgs/h-2.png)',
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
+                
+                backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
               }}
             >
@@ -34,10 +36,10 @@ export default function WhoWeAreSection() {
             {/* In the design, the blue shape actually sits on TOP of the bottom-left of the image, slanting upwards */}
             {/* Let's overlay a solid blue polygon on the bottom left corner to precisely match s-2.png */}
             <div 
-              className="absolute bottom-0 left-0 w-[95%] h-[40%] bg-[#6592ff] z-20 pointer-events-none"
+              className="absolute bottom-14 -left-6 w-[108%] h-[40%] bg-[#6592ff] z-0 pointer-events-none"
               style={{
                 // A wedge starting higher on the left and slanting down to the right, sitting right at the bottom
-                clipPath: 'polygon(0 30%, 100% 100%, 0 100%)'
+                clipPath: 'polygon(0% 7.18%, 81.46% 7.18%, 100% 7.16%, 100% 52.6%, 86.9% 52.6%, 99.75% 68.1%, 99.75% 76.24%, 68.32% 76.24%, 0% 76.24%)'
               }}
             ></div>
 
@@ -54,7 +56,7 @@ export default function WhoWeAreSection() {
             <div>
               <Link 
                 href="/about" 
-                className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-sm rounded-sm"
+                className="inline-flex text-white bg-[#6592ff] hover:bg-[#4d7ef5] font-semibold text-[15px] px-8 py-3.5 transition-colors  "
               >
                 Learn More About Us
               </Link>

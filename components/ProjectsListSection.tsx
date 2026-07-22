@@ -9,13 +9,33 @@ export default function ProjectsListSection() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -420, behavior: 'smooth' });
+      const container = scrollRef.current;
+      const cardWidth = container.firstElementChild?.clientWidth || 300;
+      const gap = window.innerWidth >= 768 ? 32 : 24; // gap-8 or gap-6
+      const scrollAmount = cardWidth + gap;
+      
+      const centerOffset = window.innerWidth < 768 ? (container.clientWidth - cardWidth) / 2 : 0;
+      const currentPos = window.innerWidth < 768 ? container.scrollLeft + centerOffset : container.scrollLeft;
+      const currentIndex = Math.round(currentPos / scrollAmount);
+      const targetIndex = currentIndex - 1;
+      
+      container.scrollTo({ left: (targetIndex * scrollAmount) - centerOffset, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 420, behavior: 'smooth' });
+      const container = scrollRef.current;
+      const cardWidth = container.firstElementChild?.clientWidth || 300;
+      const gap = window.innerWidth >= 768 ? 32 : 24;
+      const scrollAmount = cardWidth + gap;
+      
+      const centerOffset = window.innerWidth < 768 ? (container.clientWidth - cardWidth) / 2 : 0;
+      const currentPos = window.innerWidth < 768 ? container.scrollLeft + centerOffset : container.scrollLeft;
+      const currentIndex = Math.round(currentPos / scrollAmount);
+      const targetIndex = currentIndex + 1;
+      
+      container.scrollTo({ left: (targetIndex * scrollAmount) - centerOffset, behavior: 'smooth' });
     }
   };
 
@@ -50,16 +70,15 @@ export default function ProjectsListSection() {
   const extendedProjects = [...projects, ...projects, ...projects];
 
   useEffect(() => {
-    // Start at the middle set for infinite scroll in both directions
     if (scrollRef.current) {
       const container = scrollRef.current;
-      const itemWidth = container.firstElementChild?.clientWidth || 400;
-      const gap = window.innerWidth >= 768 ? 32 : 24; // gap-8 = 32px, gap-6 = 24px
+      const itemWidth = container.firstElementChild?.clientWidth || 300;
+      const gap = window.innerWidth >= 768 ? 32 : 24;
       const setWidth = projects.length * (itemWidth + gap);
       
-      // Tiny timeout to ensure layouts are fully computed
       setTimeout(() => {
-        container.scrollLeft = setWidth;
+        const centerOffset = window.innerWidth < 768 ? (container.clientWidth - itemWidth) / 2 : 0;
+        container.scrollLeft = setWidth - centerOffset;
       }, 50);
     }
   }, []);
@@ -67,44 +86,42 @@ export default function ProjectsListSection() {
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
-    const itemWidth = container.firstElementChild?.clientWidth || 400;
+    const itemWidth = container.firstElementChild?.clientWidth || 300;
     const gap = window.innerWidth >= 768 ? 32 : 24;
     const setWidth = projects.length * (itemWidth + gap);
 
-    // If we scroll into the first set, jump to the identical position in the middle set
     if (container.scrollLeft <= 0) {
       container.scrollLeft += setWidth;
     }
-    // If we scroll into the third set, jump back to the identical position in the middle set
     else if (container.scrollLeft >= setWidth * 2) {
       container.scrollLeft -= setWidth;
     }
   };
 
   return (
-    <section className="w-full bg-white pt-16   overflow-hidden">
-      <div className=" mx-auto pl-6 ">
+    <section className="w-full bg-white -mt-16 md:mt-0 md:pt-16 overflow-hidden">
+      <div className="mx-auto w-full max-w-[1400px]">
         
         {/* Header with Title and Arrows */}
-        <div className="flex items-center px-12 justify-between -mb-6">
-          <div className="flex items-center gap-6  w-full max-w-[600px]">
+        <div className="flex items-center px-6 lg:px-12 justify-between -mb-10  md:-mb-6">
+          <div className="flex items-center gap-6 w-full max-w-[600px]">
             <h2 className="text-[20px] md:text-[22px] font-semibold text-slate-500 whitespace-nowrap">
               Our Projects
             </h2>
-            <div className="h-[1px] bg-slate-300 flex-grow"></div>
+            <div className="h-[1px] bg-slate-300 hidden md:block flex-grow"></div>
           </div>
           
-          <div className="flex  gap-2">
+          <div className="flex gap-2">
             <button 
               onClick={scrollLeft}
-              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-sm"
+              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 hover:bg-[#ffb700] text-gray-700 hover:text-[#1c1c1c] transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-none"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
             </button>
             <button 
               onClick={scrollRight}
-              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:translate-x-1 rounded-sm"
+              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 hover:bg-[#ffb700] text-gray-700 hover:text-[#1c1c1c] transition-all duration-300 hover:shadow-md hover:translate-x-1 rounded-none"
               aria-label="Next slide"
             >
               <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
@@ -115,18 +132,21 @@ export default function ProjectsListSection() {
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12 pt-40 -mx-6 px-6 lg:mx-0 lg:px-0"
+          // Changed padding to safely allow center-snapping and removed mobile negative margins
+          className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12 pt-40 px-0 md:px-6 lg:px-12"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {extendedProjects.map((project, index) => (
             <div 
               key={`${project.id}-${index}`} 
-              className="relative flex-none w-[340px] md:w-[420px] h-[320px] md:h-[350px] snap-start group mt-6"
+              // Changed snap-start to snap-center for perfect mobile centering
+              // Using 80vw ensures the card takes up most of the screen but lets adjacent cards peek out
+              className="relative flex-none w-[80vw] sm:w-[340px] md:w-[420px] h-[320px] md:h-[350px] snap-center md:snap-start group mt-6"
             >
               
               {/* Colored Background Block */}
               <div 
-                className="absolute -top-36 left-0 w-[95%] h-[50%] bg-primary rounded-sm"
+                className="absolute -top-36 left-0 w-[95%] h-[50%] bg-primary rounded-none"
                 style={{ clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' }}
               >
                 <h3 
@@ -171,7 +191,7 @@ export default function ProjectsListSection() {
                   
                   <Link 
                     href="#"
-                    className="self-start bg-primary hover:bg-primary-hover text-white font-semibold text-[13px] px-5 py-2 transition-colors shadow-sm"
+                    className="self-start text-white bg-primary font-bold text-[13px] md:text-[14px] px-6 py-2 transition-all shadow-md rounded-none"
                   >
                     View Project
                   </Link>

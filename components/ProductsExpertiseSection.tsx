@@ -5,15 +5,18 @@ export default function ProductsExpertiseSection() {
     <section className="w-full bg-white pt-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8 md:mb-12 relative z-20">
-          <h2 className="text-2xl md:text-[32px] font-semibold text-[#1f2937]">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-6 md:mb-12 relative z-20 gap-4 sm:gap-0">
+          <h2 className="text-[28px] sm:text-[30px] md:text-[32px] font-bold text-[#1f2937] leading-[1.25] max-w-[500px]">
             Products That Demonstrate Our Expertise
           </h2>
-          <Link href="/products" className="text-primary font-bold text-[14px] hover:underline uppercase tracking-wider">
+          <Link 
+            href="/products" 
+            className="inline-flex   bg-primary md:bg-white font-bold text-[14px] px-8 py-3 transition-all   md:text-primary  whitespace-nowrap"
+          >
             See More
           </Link>
         </div>
+
 
         {/* Images Grid */}
         {/* The clip-path starts around 26% from the top, creating a massive artificial gap. 
@@ -21,7 +24,7 @@ export default function ProductsExpertiseSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 -mt-16 md:-mt-40 z-10 relative">
           
           {/* Left Image Box */}
-          <div className="relative w-full h-[300px] md:h-[40rem]">
+          <div className="relative  w-full h-[300px] md:h-[40rem]">
             {/* The actual image container */}
             <div 
               className="absolute top-0 left-0 z-10 w-full h-full bg-gray-200 shadow-lg"
@@ -42,7 +45,7 @@ export default function ProductsExpertiseSection() {
           </div>
 
           {/* Right Image Box */}
-          <div className="relative w-full h-[300px] md:h-[40rem]">
+          <div className="relative w-full -mt-32 md:mt-0 h-[300px] md:h-[40rem]">
             {/* The actual image container */}
             <div 
               className="absolute top-0 z-10 left-0 w-full h-full bg-gray-200 shadow-lg"

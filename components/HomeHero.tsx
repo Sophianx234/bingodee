@@ -55,7 +55,7 @@ function CountUp({ end, suffix = '', duration = 1 }: { end: number, suffix?: str
 
 export default function HomeHero() {
   return (
-    <section className="relative w-full max-w-[1400px] mx-auto px-0 md:px-6 lg:px-12 mb-16 md:mb-24">
+    <section className="relative w-full max-w-[1400px] mx-auto px-0 md:px-6 lg:px-12 mb-16 md:mb-24 overflow-x-hidden md:overflow-x-visible">
       
       {/* Main Wrapper Container */}
       <div className="relative w-full flex flex-col md:block h-auto md:h-[calc(100vh-60px)] md:min-h-[500px] md:max-h-[900px]">
@@ -65,7 +65,7 @@ export default function HomeHero() {
           
           {/* Hexagonal Image Background Layer */}
           <div 
-            className="absolute inset-0 bg-gray-200 overflow-hidden shadow-xl md:[clip-path:polygon(0%_0%,93%_0,100%_15%,100%_100%,114.8%_100%,0%_55%)] [clip-path:polygon(0%_0%,100%_0%,100%_92%,0%_100%)]"
+            className="absolute inset-0 bg-gray-200 overflow-hidden  md:[clip-path:polygon(0%_0%,93%_0,100%_15%,100%_100%,114.8%_100%,0%_55%)] [clip-path:polygon(0%_0%,100%_0%,100%_92%,0%_100%)]"
             style={{
               backgroundImage: 'url(/imgs/h-1.jpg)',
               backgroundSize: 'cover',
@@ -98,23 +98,51 @@ export default function HomeHero() {
           </div>
         </div>
         
-        {/* Stats Section - Positioned at the bottom right on desktop, stacked on mobile */}
-        <div className="relative md:absolute bottom-0 right-0 bg-white z-20 grid grid-cols-2 gap-y-8 md:flex md:items-center md:justify-between px-6 py-8 sm:p-10 md:px-10 md:py-8 w-full md:max-w-[700px] shadow md:shadow-none -mt-4 md:mt-0 mx-auto max-w-[90%] md:mx-0">
-          <div className="flex flex-col items-center text-center">
-            <span className="text-[32px] md:text-[34px] font-extrabold text-[#171717]"><CountUp end={13} suffix="+" /></span>
-            <span className="text-[12px] md:text-[13px] font-bold text-gray-500 md:text-[#171717] mt-1 leading-[1.3] uppercase md:capitalize tracking-wide md:tracking-normal">Years of<br/>Excellence</span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <span className="text-[32px] md:text-[34px] font-extrabold text-[#171717]"><CountUp end={6} suffix="+" /></span>
-            <span className="text-[12px] md:text-[13px] font-bold text-gray-500 md:text-[#171717] mt-1 leading-[1.3] uppercase md:capitalize tracking-wide md:tracking-normal">Major Mining<br/>Companies</span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <span className="text-[32px] md:text-[34px] font-extrabold text-[#171717]"><CountUp end={4} /></span>
-            <span className="text-[12px] md:text-[13px] font-bold text-gray-500 md:text-[#171717] mt-1 leading-[1.3] uppercase md:capitalize tracking-wide md:tracking-normal">Core Service<br/>Divisions</span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <span className="text-[32px] md:text-[34px] font-extrabold text-[#171717]"><CountUp end={100} suffix="%" /></span>
-            <span className="text-[12px] md:text-[13px] font-bold text-gray-500 md:text-[#171717] mt-1 leading-[1.3] uppercase md:capitalize tracking-wide md:tracking-normal">Ghanaian-owned<br/>Company</span>
+        {/* Stats Section - Positioned at the bottom right on desktop, horizontal auto scroll on mobile */}
+        <style>{`
+          @media (max-width: 767px) {
+            @keyframes scroll-x {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .mobile-marquee {
+              display: flex;
+              width: max-content;
+              animation: scroll-x 15s linear infinite;
+            }
+            .mobile-marquee:hover {
+              animation-play-state: paused;
+            }
+          }
+        `}</style>
+        
+        <div className="relative md:absolute bottom-0 right-0 bg-white z-20  md:w-full md:max-w-[700px] -mt-4 md:mt-0 mx-auto md:mx-0 overflow-hidden py-6 md:py-8 md:px-10 rounded-sm md:rounded-none">
+          <div className="mobile-marquee md:flex md:w-full md:items-center md:justify-between">
+            {
+              [
+                { end: 13, suffix: '+', label: 'Years of\nExcellence' },
+                { end: 6, suffix: '+', label: 'Major Mining\nCompanies' },
+                { end: 4, suffix: '', label: 'Core Service\nDivisions' },
+                { end: 100, suffix: '%', label: 'Ghanaian-owned\nCompany' }
+              ].concat([
+                { end: 13, suffix: '+', label: 'Years of\nExcellence' },
+                { end: 6, suffix: '+', label: 'Major Mining\nCompanies' },
+                { end: 4, suffix: '', label: 'Core Service\nDivisions' },
+                { end: 100, suffix: '%', label: 'Ghanaian-owned\nCompany' }
+              ]).map((stat, index) => (
+                <div 
+                  key={index} 
+                  className={`flex flex-col items-center text-center px-10 md:px-0 ${index >= 4 ? 'md:hidden' : ''}`}
+                >
+                  <span className="text-[32px] md:text-[34px] font-extrabold text-[#171717]">
+                    <CountUp end={stat.end} suffix={stat.suffix} />
+                  </span>
+                  <span className="text-[12px] md:text-[13px] font-bold text-gray-500 md:text-[#171717] mt-1 leading-[1.3] uppercase md:capitalize tracking-wide md:tracking-normal whitespace-pre-line">
+                    {stat.label}
+                  </span>
+                </div>
+              ))
+            }
           </div>
         </div>
 

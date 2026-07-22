@@ -9,15 +9,25 @@ export default function ServicesSection() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.firstElementChild?.clientWidth || 350;
-      scrollContainerRef.current.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
+      const container = scrollContainerRef.current;
+      const cardWidth = container.firstElementChild?.clientWidth || 340;
+      const gap = 24; // space-x-6 is 24px
+      const currentScroll = container.scrollLeft;
+      const index = Math.round(currentScroll / (cardWidth + gap));
+      const targetIndex = Math.max(0, index - 1);
+      container.scrollTo({ left: targetIndex * (cardWidth + gap), behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.firstElementChild?.clientWidth || 350;
-      scrollContainerRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+      const container = scrollContainerRef.current;
+      const cardWidth = container.firstElementChild?.clientWidth || 340;
+      const gap = 24;
+      const currentScroll = container.scrollLeft;
+      const index = Math.round(currentScroll / (cardWidth + gap));
+      const targetIndex = index + 1;
+      container.scrollTo({ left: targetIndex * (cardWidth + gap), behavior: 'smooth' });
     }
   };
 
@@ -55,32 +65,32 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="w-full bg-white ">
-      <div className="max-w-[1400px] mx-auto pl-6 ">
+    <section className="w-full bg-white py-12 md:py-0">
+      <div className="max-w-[1400px] mx-auto pl-6 md:pl-12">
         
         {/* Header with lines */}
-        <div className="flex items-center justify-center mb-16">
+        <div className="flex items-center justify-center mb-10 md:mb-16 pr-6 md:pr-12">
           <div className="h-[1px] bg-gray-300 flex-grow max-w-[200px]"></div>
-          <h3 className="mx-6 text-[16px] md:text-[18px] font-bold text-gray-500 tracking-wide">
+          <h3 className="mx-4 md:mx-6 text-[16px] md:text-[18px] font-bold text-gray-500 tracking-wide">
             Our Services
           </h3>
           <div className="h-[1px] bg-gray-300 flex-grow max-w-[200px]"></div>
         </div>
 
         {/* Carousel Container */}
-        <div className="relative ">
+        <div className="relative">
           <div 
             ref={scrollContainerRef}
-            className="flex space-x-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8"
+            className="flex space-x-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-12"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {services.map((service, idx) => (
               <div 
                 key={idx} 
-                className="relative flex-none w-[340px] md:w-[420px] h-[420px] snap-start group"
+                className="relative flex-none w-[300px] sm:w-[340px] md:w-[420px] h-[380px] md:h-[420px] snap-start group"
               >
                 {/* Colored Top Rectangle */}
-                <div className={`absolute top-0 left-0 w-full h-[130px] ${service.bgColor} p-6`}>
+                <div className={`absolute top-0 left-0 w-full h-[110px] md:h-[130px] ${service.bgColor} p-5 md:p-6`}>
                   <h4 className={`text-[16px] md:text-[18px] font-bold ${service.titleColor}`}>
                     {service.title}
                   </h4>
@@ -88,13 +98,13 @@ export default function ServicesSection() {
 
                 {/* Dark Polygon Overlaid */}
                 <div 
-                  className="absolute -bottom-1 left-2 w-full h-[32rem] z-0 bg-[#1c1c1c] transition-transform duration-300 "
+                  className="absolute -bottom-1 left-0 md:left-2 w-full h-[28rem] md:h-[32rem] z-0 bg-[#1c1c1c] transition-transform duration-300 group-hover:-translate-y-2"
                   style={{
                     clipPath: 'polygon(58.6% 25.44%, 100% 25.44%, 100% 60.35%, 85.79% 74.31%, 0% 74.31%, 0% 50.12%)'
                   }}
                 >
-                  <div className="absolute w-full px-8 pr-16" style={{ top: '53%' }}>
-                    <p className="text-gray-300 text-[14px] md:text-[15px] leading-relaxed">
+                  <div className="absolute w-full px-6 md:px-8 pr-10 md:pr-16" style={{ top: '53%' }}>
+                    <p className="text-gray-300 text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed">
                       {service.desc}
                     </p>
                   </div>
@@ -105,15 +115,15 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom Controls */}
-        <div className="relative z-10 flex items-center justify-between -mt-24 px-6 ">
+        <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between -mt-16 md:-mt-24 pr-6 md:pr-12 gap-6 sm:gap-0">
           <Link 
             href="/services" 
-            className="inline-flex text-white bg-primary hover:bg-primary-hover font-semibold text-[15px] px-8 py-3 transition-colors "
+            className="inline-flex text-white bg-primary font-bold text-[14px] md:text-[15px] px-8 py-3.5 transition-all   hover:-translate-y-1"
           >
             Explore Services
           </Link>
           
-          <div className="flex gap-3">
+          <div className="flex gap-3 self-end sm:self-auto">
             <button 
               onClick={scrollLeft}
               className="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-sm"

@@ -42,7 +42,7 @@ ${formData.message}`;
   };
 
   return (
-    <section className="w-full bg-white py-12 mb-20">
+    <section className="w-full bg-white py-12 ">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
         
         {/* Left Column: Contact Details */}

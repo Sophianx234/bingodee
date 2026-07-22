@@ -82,29 +82,29 @@ export default function ProjectsListSection() {
   };
 
   return (
-    <section className="w-full bg-white py-16 mb-20 overflow-hidden">
+    <section className="w-full bg-white pt-16   overflow-hidden">
       <div className=" mx-auto pl-6 ">
         
         {/* Header with Title and Arrows */}
-        <div className="flex items-center justify-between mb-12">
-          <div className="flex items-center gap-6 w-full max-w-[600px]">
+        <div className="flex items-center px-12 justify-between -mb-6">
+          <div className="flex items-center gap-6  w-full max-w-[600px]">
             <h2 className="text-[20px] md:text-[22px] font-semibold text-slate-500 whitespace-nowrap">
               Our Projects
             </h2>
             <div className="h-[1px] bg-slate-300 flex-grow"></div>
           </div>
           
-          <div className="flex gap-2">
+          <div className="flex  gap-2">
             <button 
               onClick={scrollLeft}
-              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center  text-gray-700"
+              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-sm"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
             </button>
             <button 
               onClick={scrollRight}
-              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center  text-gray-700"
+              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:translate-x-1 rounded-sm"
               aria-label="Next slide"
             >
               <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
@@ -149,7 +149,7 @@ export default function ProjectsListSection() {
                   className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
                   style={{
                     backgroundImage: `url(${project.image})`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
                     backgroundPosition: 'center',
                   }}
                 ></div>

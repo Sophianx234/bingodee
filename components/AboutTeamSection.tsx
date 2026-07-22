@@ -203,17 +203,17 @@ export default function AboutTeamSection() {
         `}} />
 
         {/* Carousel Navigation Arrows */}
-        <div className="flex justify-end mt-4 px-12 gap-2">
+        <div className="flex justify-end mt-4 px-12 gap-3">
           <button 
             onClick={scrollLeft}
-            className="w-12 h-12 flex items-center justify-center  transition-colors  text-gray-700"
+            className="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-sm"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
           </button>
           <button 
             onClick={scrollRight}
-            className="w-12 h-12 flex items-center justify-center  transition-colors  text-gray-700"
+            className="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:translate-x-1 rounded-sm"
             aria-label="Next slide"
           >
             <ChevronRight className="w-5 h-5" strokeWidth={2.5} />

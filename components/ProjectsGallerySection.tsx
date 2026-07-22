@@ -2,7 +2,7 @@ import { Pickaxe, HardHat, Building2, Factory, Ruler } from 'lucide-react';
 
 export default function ProjectsGallerySection() {
   return (
-    <section className="w-full bg-white py-16 mb-20">
+    <section className="w-full bg-white -mt-18 mb-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {/* Header */}

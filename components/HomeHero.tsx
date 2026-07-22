@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 
-function CountUp({ end, suffix = '', duration = 4 }: { end: number, suffix?: string, duration?: number }) {
+function CountUp({ end, suffix = '', duration = 1 }: { end: number, suffix?: string, duration?: number }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);

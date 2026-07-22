@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ProjectsHero() {
   return (
-    <section className="relative w-full overflow-none mx-auto mt-0 pt-0 px-6 lg:px-12 mb-20">
+    <section className="relative w-full overflow-none mx-auto mt-0 pt-0 px-6 lg:px-12 mb-6">
       {/* Main Image Container */}
       <div
         className="relative w-full h-[400px] md:h-[500px] lg:h-[35rem] bg-gray-200"

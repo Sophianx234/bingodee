@@ -55,7 +55,7 @@ export default function ServicesListSection() {
             </div>
 
             {/* Right: 2x2 Image Grid */}
-            <div className="w-full md:w-[55%] grid grid-cols-2 gap-4 lg:gap-6 mt-8 md:mt-12 lg:mt-8 mr-0 lg:mr-8">
+            <div className="w-full md:w-[55%] grid grid-cols-2 gap-4 p-5 lg:gap-6 mt-8 md:mt-12 lg:mt-8 mr-0 lg:mr-8">
               {/* Img 1: TL */}
               <div 
                 className="w-full aspect-[4/3] shadow-md transition-transform duration-500 hover:scale-105"

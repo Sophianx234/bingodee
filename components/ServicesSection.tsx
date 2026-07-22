@@ -113,20 +113,20 @@ export default function ServicesSection() {
             Explore Services
           </Link>
           
-          <div className="flex space-x-4">
+          <div className="flex gap-3">
             <button 
               onClick={scrollLeft}
-              className="w-12 h-12 flex items-center justify-center  transition-colors"
-              aria-label="Previous service"
+              className="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-sm"
+              aria-label="Previous slide"
             >
-              <ChevronLeft className="w-6 h-6 text-slate-700" />
+              <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
             </button>
             <button 
               onClick={scrollRight}
-              className="w-12 h-12 flex items-center justify-center bg-white    transition-colors"
-              aria-label="Next service"
+              className="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary text-gray-700 hover:text-white transition-all duration-300 hover:shadow-md hover:translate-x-1 rounded-sm"
+              aria-label="Next slide"
             >
-              <ChevronRight className="w-6 h-6 text-slate-700" />
+              <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
             </button>
           </div>
         </div>

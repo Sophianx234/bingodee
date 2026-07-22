@@ -45,7 +45,7 @@ export default function ProductsExpertiseSection() {
           <div className="relative w-full h-[300px] md:h-[40rem]">
             {/* The actual image container */}
             <div 
-              className="absolute top-0 z-10 left-0 w-full h-full bg-gray-200 "
+              className="absolute top-0 z-10 left-0 w-full h-full bg-gray-200 shadow-lg"
               style={{
                 backgroundImage: 'url(/imgs/h-1.jpg)', // Placeholder for flanges
                 backgroundSize: 'contain',

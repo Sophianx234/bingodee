@@ -55,7 +55,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-white ">
       <div className="max-w-[1400px] mx-auto pl-6 ">
         
         {/* Header with lines */}

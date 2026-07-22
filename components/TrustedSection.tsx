@@ -48,7 +48,7 @@ export default function TrustedSection() {
   times.push(1);
 
   return (
-    <section className="w-full bg-white py-16 overflow-hidden">
+    <section className="w-full bg-white  overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
         {/* Header with lines */}
         <div className="flex items-center justify-center mb-12">

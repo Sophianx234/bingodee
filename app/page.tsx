@@ -5,6 +5,7 @@ import WhoWeAreSection from '@/components/WhoWeAreSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyTrustedSection from '@/components/WhyTrustedSection';
 import ProductsExpertiseSection from '@/components/ProductsExpertiseSection';
+import TestimonialSection from '@/components/TestimonialSection';
 import CTASection from '@/components/CTASection';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <ServicesSection />
       <WhyTrustedSection />
       <ProductsExpertiseSection />
+      <TestimonialSection />
       <CTASection />
 
     </div>

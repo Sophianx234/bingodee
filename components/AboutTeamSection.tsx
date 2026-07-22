@@ -137,7 +137,7 @@ export default function AboutTeamSection() {
   };
 
   return (
-    <section className="w-full bg-white py-16 mb-20 overflow-hidden relative">
+    <section className="w-full bg-white py-16 mb-20 relative">
       
       {/* Heading */}
       <div className="flex items-center justify-center mb-16 w-full max-w-[800px] mx-auto px-6">
@@ -171,7 +171,7 @@ export default function AboutTeamSection() {
 
               {/* Main Image Container */}
               <div 
-                className="absolute top-0 left-0 w-full h-[92%] bg-[#1a1a1a] shadow-lg transition-transform duration-500 group-hover:-translate-y-2 cursor-pointer"
+                className="absolute top-0 left-0 w-full h-[92%] bg-[#1a1a1a] shadow-lg transition-transform duration-500  cursor-pointer"
                 onClick={() => setSelectedMember(member)}
                 style={{
                   backgroundImage: `url(${member.image})`,
@@ -241,7 +241,7 @@ export default function AboutTeamSection() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl bg-white  shadow-2xl overflow-hidden z-10 flex flex-col md:flex-row max-h-[90vh]"
+              className="relative w-full max-w-4xl bg-white  shadow-2xl  z-10 flex flex-col md:flex-row max-h-[90vh]"
             >
               {/* Close Button */}
               <button 

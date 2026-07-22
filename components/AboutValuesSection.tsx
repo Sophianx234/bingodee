@@ -61,7 +61,7 @@ export default function AboutValuesSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-12 mb-16">
+    <section className="w-full bg-white py-12 ">
       
       {/* Heading */}
       <div className="flex items-center justify-center mb-10 w-full max-w-[800px] mx-auto px-6">

@@ -1,10 +1,10 @@
 export default function AboutStorySection() {
   return (
-    <section id="story" className="w-full bg-white py-20">
+    <section id="story" className="w-full bg-white pt-20 pb-4">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-12 lg:gap-24">
         
         {/* Left Side: Image with Geometric Cut */}
-        <div className="w-full md:w-1/2 h-[23rem] scale-100 relative">
+        <div className="w-full md:w-[70%] h-[21rem] scale-100 relative">
           <div 
             className="absolute top-0 left-0 w-full h-full bg-gray-200 shadow-lg"
             style={{

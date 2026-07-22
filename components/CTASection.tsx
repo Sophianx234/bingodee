@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function CTASection() {
   return (
-    <section className="w-full bg-[#1c1c1c] py-0 mt-20">
+    <section className="w-full bg-[#1c1c1c] py-0 -mt-15">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between">
         
         {/* Left Side: Text and Button */}

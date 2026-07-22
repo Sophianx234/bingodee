@@ -1,6 +1,6 @@
 export default function AboutMissionVision() {
   return (
-    <section className="w-full bg-white py-12 mb-20">
+    <section className="w-full bg-white pt-8 mb-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
         
         {/* Mission Card */}

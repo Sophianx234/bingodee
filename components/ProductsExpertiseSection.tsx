@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ProductsExpertiseSection() {
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white pt-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {/* Header */}

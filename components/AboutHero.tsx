@@ -20,10 +20,10 @@ export default function AboutHero() {
       {/* Absolute positioned relative to the section, sticking out bottom and left slightly */}
       <div 
         className="absolute bottom-4 left-6  transform translate-y-12 w-[50%]  z-10" 
-        style={{ filter: 'drop-shadow(0 20px 25px rgba(0,0,0,0.5))' }}
+        
       >
         <div 
-          className="w-full bg-[#111827] text-white py-10 md:py-12 lg:py-16  shadow-lg"
+          className="w-full bg-[#1c1c1c] z-10 opacity-95 text-white py-10 md:py-12 lg:py-16  "
           style={{
             // Top-right cut and Bottom-left cut, normalized to wrap the content elegantly
             clipPath: 'polygon(0% 0%, 80.8% 0%, 100% 26.6%, 100% 100%, 17.5% 100%, 0% 59.3%)'

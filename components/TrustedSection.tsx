@@ -48,48 +48,53 @@ export default function TrustedSection() {
   times.push(1);
 
   return (
-    <section className="w-full bg-white  overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-        {/* Header with lines */}
-        <div className="flex items-center justify-center mb-12">
+    <section className="w-full bg-white overflow-hidden -mt-5 md:py-16">
+      <div className="max-w-[1400px] mx-auto relative">
+        
+        {/* Header with lines (Padded) */}
+        <div className="flex items-center justify-center mb-8 md:mb-12 px-6 lg:px-12">
           <div className="h-[1px] bg-gray-300 flex-grow max-w-[200px]"></div>
-          <h3 className="mx-6 text-[16px] md:text-[18px] font-bold text-gray-500 tracking-wide">
+          <h3 className="mx-4 md:mx-6 text-[13px] sm:text-[16px] md:text-[18px] font-bold text-gray-500 tracking-wider  whitespace-nowrap">
             Trusted By
           </h3>
           <div className="h-[1px] bg-gray-300 flex-grow max-w-[200px]"></div>
         </div>
 
-        {/* Fading edges for a premium look */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        {/* Brands Track Container (Edge-to-Edge) */}
+        <div className="relative w-full">
+          {/* Fading edges for a premium look */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
-        {/* Brands Flex Container */}
-        <div className="flex w-full overflow-hidden">
-          <motion.div 
-            className="flex flex-nowrap items-center w-max"
-            animate={{ x: xValues }}
-            transition={{
-              duration: totalDuration,
-              times: times,
-              ease: easings,
-              repeat: Infinity,
-              repeatType: "loop"
-            }}
-          >
-            {duplicatedBrands.map((brand, index) => (
-              <div 
-                key={index} 
-                className="relative flex-shrink-0 flex items-center justify-center h-12 w-24 sm:h-16 sm:w-32 md:h-20 md:w-40 mx-4 md:mx-6 lg:mx-8 transition-transform "
-              >
-                <img 
-                  src={brand} 
-                  alt={`Trusted Brand ${index + 1}`}
-                  className="max-h-full max-w-full object-contain  transition-all duration-300"
-                />
-              </div>
-            ))}
-          </motion.div>
+          {/* Brands Flex Container */}
+          <div className="flex w-full overflow-hidden">
+            <motion.div 
+              className="flex flex-nowrap items-center w-max"
+              animate={{ x: xValues }}
+              transition={{
+                duration: totalDuration,
+                times: times,
+                ease: easings,
+                repeat: Infinity,
+                repeatType: "loop"
+              }}
+            >
+              {duplicatedBrands.map((brand, index) => (
+                <div 
+                  key={index} 
+                  className="relative flex-shrink-0 flex items-center justify-center h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 mx-6 sm:mx-8 md:mx-10 transition-transform"
+                >
+                  <img 
+                    src={brand} 
+                    alt={`Trusted Brand ${index + 1}`}
+                    className="max-h-full max-w-full object-contain  transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
+
       </div>
     </section>
   );

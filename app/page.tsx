@@ -6,6 +6,7 @@ import ServicesSection from '@/components/ServicesSection';
 import WhyTrustedSection from '@/components/WhyTrustedSection';
 import ProductsExpertiseSection from '@/components/ProductsExpertiseSection';
 import TestimonialSection from '@/components/TestimonialSection';
+import ProjectDemoSection from '@/components/ProjectDemoSection';
 import CTASection from '@/components/CTASection';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <WhyTrustedSection />
       <ProductsExpertiseSection />
       <TestimonialSection />
+      <ProjectDemoSection />
       <CTASection />
 
     </div>

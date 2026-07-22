@@ -58,12 +58,16 @@ export default function TestimonialSection() {
     // Start at the middle set for infinite scroll
     if (scrollRef.current) {
       const container = scrollRef.current;
-      const itemWidth = container.firstElementChild?.clientWidth || 400;
+      const cardWidth = container.firstElementChild?.clientWidth || 400;
       const gap = 32; // gap-8
-      const setWidth = testimonials.length * (itemWidth + gap);
+      const itemFullWidth = cardWidth + gap;
+      const centerOffset = (container.clientWidth - cardWidth) / 2;
+      
+      // We want to land on index 4 (the first item of the middle set)
+      const initialScroll = (testimonials.length * itemFullWidth) - centerOffset;
       
       setTimeout(() => {
-        container.scrollLeft = setWidth;
+        container.scrollLeft = initialScroll;
       }, 50);
     }
   }, []);
@@ -71,14 +75,15 @@ export default function TestimonialSection() {
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
-    const itemWidth = container.firstElementChild?.clientWidth || 400;
+    const cardWidth = container.firstElementChild?.clientWidth || 400;
     const gap = 32;
-    const itemFullWidth = itemWidth + gap;
+    const itemFullWidth = cardWidth + gap;
     const setWidth = testimonials.length * itemFullWidth;
+    const centerOffset = (container.clientWidth - cardWidth) / 2;
 
-    // Calculate active dot index
-    const scrollPos = container.scrollLeft;
-    let index = Math.round(scrollPos / itemFullWidth);
+    // Calculate active dot index using the virtual scroll position (center of screen)
+    const virtualScrollPos = container.scrollLeft + centerOffset;
+    let index = Math.round(virtualScrollPos / itemFullWidth);
     
     // Normalize to original array length safely
     let normalizedIndex = index % testimonials.length;
@@ -86,34 +91,56 @@ export default function TestimonialSection() {
     setActiveIndex(normalizedIndex);
 
     // Infinite loop jump
-    if (container.scrollLeft <= 0) {
+    // If we drift too far left or right, seamlessly jump by exactly one setWidth
+    if (virtualScrollPos <= itemFullWidth) {
       container.scrollLeft += setWidth;
-    } else if (container.scrollLeft >= setWidth * 2) {
+    } else if (virtualScrollPos >= setWidth * 2) {
       container.scrollLeft -= setWidth;
     }
   };
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      const cardWidth = scrollRef.current.firstElementChild?.clientWidth || 350;
-      scrollRef.current.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' });
+      const container = scrollRef.current;
+      const cardWidth = container.firstElementChild?.clientWidth || 400;
+      const gap = 32;
+      const itemFullWidth = cardWidth + gap;
+      const centerOffset = (container.clientWidth - cardWidth) / 2;
+      
+      const virtualScrollPos = container.scrollLeft + centerOffset;
+      const index = Math.round(virtualScrollPos / itemFullWidth);
+      const targetIndex = Math.max(0, index - 1);
+      
+      container.scrollTo({ left: (targetIndex * itemFullWidth) - centerOffset, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      const cardWidth = scrollRef.current.firstElementChild?.clientWidth || 350;
-      scrollRef.current.scrollBy({ left: cardWidth + 32, behavior: 'smooth' });
+      const container = scrollRef.current;
+      const cardWidth = container.firstElementChild?.clientWidth || 400;
+      const gap = 32;
+      const itemFullWidth = cardWidth + gap;
+      const centerOffset = (container.clientWidth - cardWidth) / 2;
+      
+      const virtualScrollPos = container.scrollLeft + centerOffset;
+      const index = Math.round(virtualScrollPos / itemFullWidth);
+      const targetIndex = index + 1;
+      
+      container.scrollTo({ left: (targetIndex * itemFullWidth) - centerOffset, behavior: 'smooth' });
     }
   };
 
   const scrollToDot = (index: number) => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
-    const itemWidth = container.firstElementChild?.clientWidth || 400;
+    const cardWidth = container.firstElementChild?.clientWidth || 400;
     const gap = 32;
+    const itemFullWidth = cardWidth + gap;
+    const centerOffset = (container.clientWidth - cardWidth) / 2;
+    
     // Scroll to the middle set corresponding index
-    const targetScroll = (testimonials.length + index) * (itemWidth + gap);
+    const targetScroll = ((testimonials.length + index) * itemFullWidth) - centerOffset;
     container.scrollTo({ left: targetScroll, behavior: 'smooth' });
   };
 
@@ -163,7 +190,7 @@ export default function TestimonialSection() {
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex gap-8 overflow-x-auto snap-x pl-8 snap-mandatory scrollbar-hide pb-8 -mx-6  "
+          className="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {extendedTestimonials.map((t, idx) => {
@@ -173,11 +200,11 @@ export default function TestimonialSection() {
             return (
               <div 
                 key={idx}
-                className="relative flex-none w-[320px] md:w-[400px] h-[400px] md:h-[450px] snap-start group"
+                className="relative flex-none w-[280px] sm:w-[320px] md:w-[400px] h-[400px] md:h-[450px] snap-center group"
               >
                 {/* Decorative Colored Polygon Below the Card */}
                 <div 
-                  className={`absolute bottom-0 right-0 w-[80%] h-[50%] ${colorClass} z-0 transition-transform duration-500 `}
+                  className={`absolute bottom-0 right-0 w-[80%] h-[50%] ${colorClass} z-0 transition-transform duration-500`}
                   style={{
                     clipPath: 'polygon(0% 0%, 90% 0%, 100% 10%, 100% 100%, 10% 100%, 0% 90%)'
                   }}
@@ -185,7 +212,7 @@ export default function TestimonialSection() {
 
                 {/* Main White Card */}
                 <div 
-                  className="absolute top-0 left-0 w-[95%] h-[92%] bg-white p-8 md:p-10 shadow-lg z-10 flex flex-col justify-between"
+                  className="absolute top-0 left-0 w-[95%] h-[92%] bg-white p-6 sm:p-8 md:p-10 shadow-lg z-10 flex flex-col justify-between"
                   style={{
                     clipPath: 'polygon(0% 0%, 90% 0%, 100% 10%, 100% 100%, 10% 100%, 0% 90%)'
                   }}
@@ -193,7 +220,7 @@ export default function TestimonialSection() {
                   {/* Background Open Quote Icon */}
                   <div className="absolute top-1 left-2 text-primary/10 transition-colors duration-300 group-hover:text-primary/20 z-0 pointer-events-none">
                     <svg 
-                      className="w-15 h-15 " 
+                      className="w-12 h-12 md:w-15 md:h-15" 
                       viewBox="0 0 24 24" 
                       fill="currentColor" 
                       xmlns="http://www.w3.org/2000/svg"
@@ -204,24 +231,29 @@ export default function TestimonialSection() {
 
                   {/* Top Content (Quote) */}
                   <div className="relative z-10 pt-4">
-                    <p className="text-gray-600 leading-relaxed text-[15px] md:text-[16px] italic">
+                    <p className="text-gray-600 leading-relaxed text-[14px] md:text-[16px] italic">
                       {t.content}
                     </p>
                   </div>
 
                   {/* Bottom Content (Author Info) */}
-                  <div className="flex items-center gap-4 relative z-10">
-                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#ffb700] p-[2px] flex-shrink-0 bg-white">
+                  <div className="flex items-center gap-3 md:gap-4 relative z-10">
+                    {/* Geometrically Sharp Avatar (Octagon) */}
+                    <div 
+                      className="w-14 h-14 md:w-16 md:h-16 bg-[#ffb700] p-[3px] flex-shrink-0"
+                      style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}
+                    >
                       <img 
                         src={t.image} 
                         alt={t.name}
-                        className="w-full h-full object-cover rounded-full"
+                        className="w-full h-full object-cover bg-white"
+                        style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}
                       />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1f2937] text-[16px]">{t.name}</h4>
-                      <p className="text-sm font-medium text-primary">{t.role}</p>
-                      <p className="text-xs text-gray-500">{t.company}</p>
+                      <h4 className="font-bold text-[#1f2937] text-[15px] md:text-[16px]">{t.name}</h4>
+                      <p className="text-[13px] md:text-sm font-medium text-primary">{t.role}</p>
+                      <p className="text-[11px] md:text-xs text-gray-500">{t.company}</p>
                     </div>
                   </div>
                 </div>
@@ -231,18 +263,18 @@ export default function TestimonialSection() {
         </div>
 
         {/* Navigation Footer */}
-        <div className="flex justify-between items-center mt-10 px-6 lg:px-12">
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-6 md:mt-10 px-6 lg:px-12 gap-6 sm:gap-0">
           
           {/* Spacer to perfectly center the dots when using space-between */}
-          <div className="hidden md:block w-[100px]"></div>
+          <div className="hidden sm:block w-[100px]"></div>
 
-          {/* Dots */}
+          {/* Sharp Dots */}
           <div className="flex justify-center items-center gap-3">
             {testimonials.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => scrollToDot(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-none transition-all duration-300 ${
                   activeIndex === idx 
                     ? 'bg-primary w-8' 
                     : 'bg-gray-600 hover:bg-gray-400 w-2'
@@ -256,14 +288,14 @@ export default function TestimonialSection() {
           <div className="flex gap-3">
             <button 
               onClick={scrollLeft}
-              className="w-12 h-12 flex items-center justify-center bg-[#2a2a2a] hover:bg-primary text-gray-400 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-sm"
+              className="w-12 h-12 flex items-center justify-center bg-[#2a2a2a] hover:bg-primary text-gray-400 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-x-1 rounded-none"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
             </button>
             <button 
               onClick={scrollRight}
-              className="w-12 h-12 flex items-center justify-center bg-[#2a2a2a] hover:bg-primary text-gray-400 hover:text-white transition-all duration-300 hover:shadow-md hover:translate-x-1 rounded-sm"
+              className="w-12 h-12 flex items-center justify-center bg-[#2a2a2a] hover:bg-primary text-gray-400 hover:text-white transition-all duration-300 hover:shadow-md hover:translate-x-1 rounded-none"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5" strokeWidth={2.5} />

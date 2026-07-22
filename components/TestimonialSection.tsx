@@ -177,7 +177,7 @@ export default function TestimonialSection() {
               >
                 {/* Decorative Colored Polygon Below the Card */}
                 <div 
-                  className={`absolute bottom-0 right-0 w-[80%] h-[50%] ${colorClass} z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2`}
+                  className={`absolute bottom-0 right-0 w-[80%] h-[50%] ${colorClass} z-0 transition-transform duration-500 `}
                   style={{
                     clipPath: 'polygon(0% 0%, 90% 0%, 100% 10%, 100% 100%, 10% 100%, 0% 90%)'
                   }}

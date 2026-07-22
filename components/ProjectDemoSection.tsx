@@ -52,7 +52,7 @@ export default function ProjectDemoSection() {
   };
 
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white pb-24">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
         
         {/* Header Section */}
@@ -111,10 +111,10 @@ export default function ProjectDemoSection() {
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                   <button 
                     onClick={() => setIsPlaying(true)}
-                    className="relative w-20 h-20 bg-primary hover:bg-[#ffb700] text-white transition-all duration-300 hover:scale-110 shadow-2xl flex items-center justify-center rounded-full"
+                    className="relative w-20 h-20 bg-primary  text-white transition-all duration-300 hover:scale-110 shadow-2xl flex items-center justify-center rounded-full"
                     aria-label="Play Video"
                   >
-                    <Play className="w-8 h-8 ml-2" fill="currentColor" />
+                    <Play className="w-8 h-8 " fill="currentColor" />
                   </button>
                 </div>
               </>

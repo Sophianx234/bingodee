@@ -22,17 +22,15 @@ export default function ContactFormSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Construct the WhatsApp message
+    // Construct the WhatsApp message in a natural, first-person perspective
     const text = `Hello Bingodee Company Limited,
 
-*New Request from Website*
-*Name:* ${formData.name}
-*Email:* ${formData.email}
-*Contact:* ${formData.contact}
-*Request Type:* ${formData.requestType}
+My name is ${formData.name}. I am reaching out regarding a ${formData.requestType} inquiry.
 
-*Message:*
-${formData.message}`;
+${formData.message}
+
+You can contact me back at ${formData.contact} or via email at ${formData.email}.
+Thank you.`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappNumber = '233243127833'; // Main contact number provided

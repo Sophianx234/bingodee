@@ -90,7 +90,7 @@ export default function HomeHero() {
             <div>
               <Link 
                 href="/services" 
-                className="inline-flex text-[#1c1c1c] hover:text-white bg-[#ffb700] hover:bg-primary font-bold text-[14px] md:text-[15px] px-8 py-3.5 transition-colors shadow-lg rounded-sm uppercase tracking-wide"
+                className="inline-flex  text-white  bg-primary font-bold text-[14px] md:text-[15px] px-8 py-3.5 transition-colors shadow-lg rounded-sm uppercase tracking-wide"
               >
                 Explore Services
               </Link>

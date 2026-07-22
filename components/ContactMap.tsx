@@ -1,6 +1,6 @@
 export default function ContactMap() {
   return (
-    <section className="w-full bg-white pb-4">
+    <section className="w-full bg-white pt-10 md:pt-0 pb-4">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="flex items-center justify-center mb-12 w-full max-w-[800px] mx-auto">

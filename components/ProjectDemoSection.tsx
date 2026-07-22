@@ -16,21 +16,21 @@ const projectVideos: ProjectVideo[] = [
     id: '1',
     title: 'Heavy Structural Steel Erection',
     category: 'Construction',
-    videoId: 'LXb3EKWsInQ', 
-    thumbnail: 'https://images.unsplash.com/photo-1541888081643-eb31e0b83e4a?auto=format&fit=crop&q=80&w=1200&h=800'
+    videoId: 'FLs2faYqoNU', 
+    thumbnail: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: '2',
     title: 'Industrial Piping & Valve Systems',
     category: 'Engineering',
-    videoId: 'tO01J-M3g0U', 
-    thumbnail: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=1200&h=800'
+    videoId: 'ZEzq8KQWV7g', 
+    thumbnail: 'https://images.unsplash.com/photo-1581092570490-cc40829efaae?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: '3',
     title: 'Precision Welding & Fabrication',
     category: 'Manufacturing',
-    videoId: '9bZkp7q19f0', 
+    videoId: 'EVgkMU1-8sw', 
     thumbnail: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200&h=800'
   }
 ];

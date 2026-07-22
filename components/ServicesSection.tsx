@@ -68,7 +68,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative mb-12">
+        <div className="relative ">
           <div 
             ref={scrollContainerRef}
             className="flex space-x-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8"
@@ -77,24 +77,24 @@ export default function ServicesSection() {
             {services.map((service, idx) => (
               <div 
                 key={idx} 
-                className="relative flex-none w-[300px] md:w-[350px] h-[320px] snap-start group"
+                className="relative flex-none w-[340px] md:w-[420px] h-[420px] snap-start group"
               >
                 {/* Colored Top Rectangle */}
-                <div className={`absolute top-0 left-0 w-full h-[110px] ${service.bgColor} p-6`}>
-                  <h4 className={`text-[15px] font-bold ${service.titleColor}`}>
+                <div className={`absolute top-0 left-0 w-full h-[130px] ${service.bgColor} p-6`}>
+                  <h4 className={`text-[16px] md:text-[18px] font-bold ${service.titleColor}`}>
                     {service.title}
                   </h4>
                 </div>
 
                 {/* Dark Polygon Overlaid */}
                 <div 
-                  className="absolute -bottom-5 left-2 w-full h-[25rem] z-0 bg-[#1c1c1c] transition-transform duration-300 "
+                  className="absolute -bottom-1 left-2 w-full h-[32rem] z-0 bg-[#1c1c1c] transition-transform duration-300 "
                   style={{
                     clipPath: 'polygon(58.6% 25.44%, 100% 25.44%, 100% 60.35%, 85.79% 74.31%, 0% 74.31%, 0% 50.12%)'
                   }}
                 >
-                  <div className="absolute w-full px-6 pr-12" style={{ top: '53%' }}>
-                    <p className="text-gray-300 text-[13px] leading-relaxed">
+                  <div className="absolute w-full px-8 pr-16" style={{ top: '53%' }}>
+                    <p className="text-gray-300 text-[14px] md:text-[15px] leading-relaxed">
                       {service.desc}
                     </p>
                   </div>

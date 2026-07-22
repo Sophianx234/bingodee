@@ -19,7 +19,7 @@ export default function ProductsExpertiseSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           
           {/* Left Image Box */}
-          <div className="relative w-full h-[300px] md:h-[40rem] ">
+          <div className="relative w-full  md:h-[40remx] ">
             {/* The actual image container */}
             <div 
               className="absolute top-0 left-0 z-10 w-full h-full bg-gray-200 shadow-lg"

@@ -10,7 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-primary: #5fa9c9;
+  --color-primary: #028ab9;
+  /* --color-primary: #5fa9c9; */
   --color-primary-hover: #297793;
 }
 

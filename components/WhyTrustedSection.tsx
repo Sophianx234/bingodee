@@ -42,7 +42,7 @@ export default function WhyTrustedSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white pt-16">
       <div className="max-w-[1100px] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}

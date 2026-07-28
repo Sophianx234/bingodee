@@ -191,7 +191,7 @@ export default function AboutTeamSection() {
               {/* Blue Button */}
               <button 
                 onClick={() => setSelectedMember(member)}
-                className="absolute bottom-10 -right-5  bg-primary hover:bg-primary-hover text-white font-semibold text-[14px] px-6 py-3 transition-all duration-300 shadow-xl z-50 flex items-center gap-1 group-hover:pr-4"
+                className="absolute bottom-10 -right-5  bg-primary hover:bg-primary-hover text-white font-semibold text-[14px] px-6 py-3 transition-all duration-300 shadow-xl z-20 flex items-center gap-1 group-hover:pr-4"
               >
                 Read Portfolio <ChevronRight className="w-4 h-4 opacity-0 -mr-4 group-hover:opacity-100 group-hover:mr-0 transition-all duration-300" />
               </button>

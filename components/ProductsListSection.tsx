@@ -65,9 +65,14 @@ const products = [
 export default function ProductsListSection() {
   const [visibleCount, setVisibleCount] = useState(12);
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredProducts = products.filter(product => 
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const loadMore = () => {
-    setVisibleCount(prev => Math.min(prev + 12, products.length));
+    setVisibleCount(prev => Math.min(prev + 12, filteredProducts.length));
   };
 
   // Close modal when Escape key is pressed
@@ -93,19 +98,40 @@ export default function ProductsListSection() {
     <section className="w-full bg-slate-50 py-16 md:py-24 md:mb-32 relative">
       <div className="mx-auto w-full max-w-[1400px] px-6 lg:px-12">
         
-        {/* Header with Title */}
-        <div className="flex items-center justify-between mb-12">
-          <div className="flex items-center gap-6 w-full max-w-[600px]">
+        {/* Header with Title and Search */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6">
+          <div className="flex items-center gap-6 w-full md:max-w-[400px]">
             <h2 className="text-[20px] md:text-[28px] font-bold text-slate-800 whitespace-nowrap">
               Our Products
             </h2>
             <div className="h-[2px] bg-primary flex-grow"></div>
           </div>
+          
+          {/* Search Bar */}
+          <div className="w-full md:w-auto md:min-w-[320px]">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchQuery}
+                onChange={(e) => { setSearchQuery(e.target.value); setVisibleCount(12); }}
+                className="w-full bg-white border border-slate-200 px-5 py-3 pr-11 outline-none text-[15px] text-slate-700 placeholder:text-slate-400 focus:border-primary transition-colors "
+              />
+              <svg className="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
         </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {products.slice(0, visibleCount).map((product) => (
+          {filteredProducts.length === 0 ? (
+            <div className="col-span-full py-12 text-center text-slate-500">
+              No products found matching "{searchQuery}"
+            </div>
+          ) : null}
+          {filteredProducts.slice(0, visibleCount).map((product) => (
             <div 
               key={product.id} 
               className="group relative bg-white overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-[320px]"
@@ -147,7 +173,7 @@ export default function ProductsListSection() {
         </div>
 
         {/* Load More Button */}
-        {visibleCount < products.length && (
+        {visibleCount < filteredProducts.length && (
           <div className="mt-16 flex justify-center">
             <button 
               onClick={loadMore}

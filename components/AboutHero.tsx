@@ -68,12 +68,11 @@ export default function AboutHero() {
           <div 
             className="absolute inset-0 bg-gray-200 overflow-hidden"
             style={{
-              backgroundImage: 'url(/imgs/h-3.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
               clipPath: 'polygon(0% 0%, 100% 0%, 100% 92%, 0% 100%)'
             }}
-          ></div>
+          >
+            <Image src="/imgs/h-3.jpg" alt="Hero background" fill unoptimized priority style={{ objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
 
           {/* Dark Polygon Overlay */}
           <div 
@@ -149,13 +148,12 @@ export default function AboutHero() {
         <div 
           className="relative w-full md:aspect-auto md:h-[450px] lg:h-[35rem] bg-gray-100"
           style={{
-            backgroundImage: 'url(/imgs/h-3.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
             // Hexagonal/Geometric cut normalized to 100% of container height
             clipPath: 'polygon(0% 0%, 80.8% 0%, 100% 26.6%, 100% 100%, 17.5% 100%, 0% 59.3%)'
           }}
-        ></div>
+        >
+          <Image src="/imgs/h-3.jpg" alt="Hero background" fill unoptimized priority style={{ objectFit: 'cover', objectPosition: 'center' }} />
+        </div>
 
         {/* Dark Overlay Box Wrapper */}
         <div 

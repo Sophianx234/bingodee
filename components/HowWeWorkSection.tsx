@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Navigation } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HowWeWorkSection() {
   const [activeStep, setActiveStep] = useState<number | null>(0);
@@ -107,12 +108,16 @@ export default function HowWeWorkSection() {
                 transition={{ duration: 0.4 }}
                 className="absolute top-0 left-0 w-full h-full shadow-2xl"
                 style={{
-                  backgroundImage: `url('${activeStep !== null ? steps[activeStep].image : steps[0].image}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
                 }}
-              />
+              >
+                <Image
+                  src={activeStep !== null ? steps[activeStep].image : steps[0].image}
+                  alt={activeStep !== null ? steps[activeStep].title : steps[0].title}
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </motion.div>
             </AnimatePresence>
           </div>
 

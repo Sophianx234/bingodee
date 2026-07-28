@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 type Testimonial = {
@@ -243,9 +244,11 @@ export default function TestimonialSection() {
                       className="w-14 h-14 md:w-16 md:h-16 bg-[#ffb700] p-[3px] flex-shrink-0"
                       style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}
                     >
-                      <img 
+                      <Image 
                         src={t.image} 
                         alt={t.name}
+                        width={150}
+                        height={150}
                         className="w-full h-full object-cover bg-white"
                         style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}
                       />

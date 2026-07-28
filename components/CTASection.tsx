@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function CTASection() {
   return (
@@ -29,13 +30,17 @@ export default function CTASection() {
           <div 
             className="absolute top-0 right-0 w-full h-full bg-gray-100 transition-transform duration-700 group-hover:scale-105"
             style={{
-              backgroundImage: 'url("/imgs/products/Non-Return%20Valve.jpg.jpeg")',
-              backgroundSize: 'contain',
-              backgroundPosition: '50% 55%',
               // Polygon matches s-4.png right image:
               clipPath: 'polygon(0% 25.19%, 80.8% 25.19%, 100% 38.4%, 100% 74.81%, 17.46% 74.81%, 0% 54.61%)'
             }}
-          ></div>
+          >
+            <Image
+              src="/imgs/products/Non-Return%20Valve.jpg.jpeg"
+              alt="CTA Background"
+              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: 'contain', objectPosition: '50% 55%' }}
+            />
+          </div>
           
           {/* Subtle Accent Glow behind the image to separate from dark background */}
           <div 

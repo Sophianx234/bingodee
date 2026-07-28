@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -174,14 +175,17 @@ export default function AboutTeamSection() {
                 className="absolute top-0 left-0 w-full h-[92%] bg-[#1a1a1a] shadow-lg transition-transform duration-500  cursor-pointer"
                 onClick={() => setSelectedMember(member)}
                 style={{
-                  backgroundImage: `url(${member.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   clipPath: 'polygon(0 0, 85% 0, 100% 15%, 100% 100%, 50% 100%, 0 50%)'
                 }}
               >
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
                 {/* Fallback pattern in case image fails or loads slow */}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
               </div>
 
               {/* Blue Button */}
@@ -254,9 +258,15 @@ export default function AboutTeamSection() {
               {/* Left Side: Image */}
               <div className="w-full md:w-[45%] h-[250px] md:h-auto min-h-[300px] relative">
                 <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${selectedMember.image})` }}
-                />
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={selectedMember.image}
+                    alt={selectedMember.name}
+                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                </div>
               </div>
 
               {/* Right Side: Description */}

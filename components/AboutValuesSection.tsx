@@ -81,9 +81,15 @@ export default function AboutValuesSection() {
           >
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out "
-              style={{ backgroundImage: `url(${val.image})` }}
-            ></div>
+              className="absolute inset-0 transition-transform duration-700 ease-out "
+            >
+              <Image
+                src={val.image}
+                alt={val.title}
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+              />
+            </div>
             
             {/* Optional Overlay for readability */}
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500"></div>

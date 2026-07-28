@@ -96,12 +96,14 @@ export default function IndustrialSolutionsSection() {
               {/* The Image */}
               <div 
                 className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                style={{
-                  backgroundImage: `url('${card.image}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              ></div>
+              >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
 
               {/* Dark Gradient Overlay for text readability - scoped to visible area */}
               <div 

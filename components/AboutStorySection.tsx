@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutStorySection() {
   return (
     <section id="story" className="w-full bg-white -mt-18 sm:-mt-12 md:mt-0 pt-6 md:pt-12 pb-8 md:pb-12 relative z-20">
@@ -8,13 +10,17 @@ export default function AboutStorySection() {
           <div 
             className="absolute top-0 left-0 w-full h-full bg-gray-100 shadow-xl transition-transform duration-700 group-hover:scale-[1.02]"
             style={{
-              backgroundImage: "url('/imgs/products/Gate%20Valves.jpg.jpeg')", // Specified by user
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
               // Top-left: square, Top-right: cut, Bottom-right: square, Bottom-left: cut
               clipPath: 'polygon(0% 0%, 80.8% 0%, 100% 26.6%, 100% 100%, 17.5% 100%, 0% 59.3%)'
             }}
-          ></div>
+          >
+            <Image
+              src="/imgs/products/Gate%20Valves.jpg.jpeg"
+              alt="Our Story"
+              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+            />
+          </div>
         </div>
 
         {/* Right Side: Text Content */}

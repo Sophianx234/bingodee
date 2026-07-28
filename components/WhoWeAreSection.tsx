@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function WhoWeAreSection() {
   return (
@@ -14,12 +15,14 @@ export default function WhoWeAreSection() {
               className="relative w-full max-w-[500px] lg:max-w-none aspect-square lg:aspect-auto lg:h-[37rem] scale-100 lg:scale-110 z-10 transition-transform duration-500"
               style={{
                 clipPath: 'polygon(0% 24.88%, 81.34% 24.88%, 100% 38.06%, 100% 74.13%, 60.95% 74.13%, 35.7% 61.33%, 0% 43.64%)',
-                backgroundImage: "url('/imgs/products/Gate%20Valves.jpg.jpeg')",
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: '20% 50%',
               }}
             >
+              <Image
+                src="/imgs/products/Gate%20Valves.jpg.jpeg"
+                alt="Who We Are"
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'contain', objectPosition: '20% 50%' }}
+              />
             </div>
 
             {/* Blue Shape Overlay */}

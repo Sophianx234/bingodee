@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ProductsExpertiseSection() {
   return (
@@ -29,12 +30,16 @@ export default function ProductsExpertiseSection() {
             <div 
               className="absolute top-0 left-0 z-10 w-full h-full bg-gray-200 shadow-lg"
               style={{
-                backgroundImage: 'url(/imgs/h-2.png)', // Placeholder for pipes
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
                 clipPath: 'polygon(0% 25.94%, 81.05% 25.94%, 99.64% 44.39%, 99.64% 75.37%, 57.61% 75.37%, 0% 47.94%)'
               }}
-            ></div>
+            >
+              <Image
+                src="/imgs/h-2.png"
+                alt="Pipes"
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+              />
+            </div>
             {/* The Blue Polygon Overlay on Bottom Left */}
             <div 
               className="absolute bottom-19 -left-1 w-full h-[35%] bg-primary z-0 pointer-events-none"
@@ -50,12 +55,16 @@ export default function ProductsExpertiseSection() {
             <div 
               className="absolute top-0 z-10 left-0 w-full h-full bg-gray-200 shadow-lg"
               style={{
-                backgroundImage: 'url(/imgs/h-1.jpg)', // Placeholder for flanges
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
                 clipPath: 'polygon(100% 25.94%, 18.95% 25.94%, 0.36% 44.39%, 0.36% 75.37%, 42.39% 75.37%, 100% 47.94%)'
               }}
-            ></div>
+            >
+              <Image
+                src="/imgs/h-1.jpg"
+                alt="Flanges"
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+              />
+            </div>
             {/* The Blue Polygon Overlay on Bottom Right */}
             <div 
               className="absolute bottom-19 -right-1 w-full h-[35%] bg-primary z-0 pointer-events-none"

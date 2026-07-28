@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function TrustedSection() {
   const brands = [
@@ -84,10 +85,11 @@ export default function TrustedSection() {
                   key={index} 
                   className="relative flex-shrink-0 flex items-center justify-center h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 mx-6 sm:mx-8 md:mx-10 transition-transform"
                 >
-                  <img 
+                  <Image 
                     src={brand} 
                     alt={`Trusted Brand ${index + 1}`}
-                    className="max-h-full max-w-full object-contain  transition-all duration-300"
+                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="max-h-full max-w-full object-contain transition-all duration-300"
                   />
                 </div>
               ))}

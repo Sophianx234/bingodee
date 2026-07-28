@@ -1,4 +1,5 @@
 import { Pickaxe, HardHat, Building2, Factory, Ruler } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ProductsGallerySection() {
   return (
@@ -26,12 +27,14 @@ export default function ProductsGallerySection() {
             >
               <div 
                 className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: 'url(/imgs/p-4.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              ></div>
+              >
+                <Image
+                  src="/imgs/p-4.jpg"
+                  alt="Mining"
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
               
               <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-8 md:px-12">
@@ -51,12 +54,14 @@ export default function ProductsGallerySection() {
             >
               <div 
                 className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: 'url(/imgs/p-5.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              ></div>
+              >
+                <Image
+                  src="/imgs/p-5.jpg"
+                  alt="Civil Engineering"
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
               
               <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-8 md:px-12">
@@ -80,12 +85,14 @@ export default function ProductsGallerySection() {
             >
               <div 
                 className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: 'url(/imgs/p-6.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              ></div>
+              >
+                <Image
+                  src="/imgs/p-6.jpg"
+                  alt="Infrastructure"
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
               
               <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-10">
@@ -105,12 +112,14 @@ export default function ProductsGallerySection() {
             >
               <div 
                 className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: 'url(/imgs/p-7.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              ></div>
+              >
+                <Image
+                  src="/imgs/p-7.jpg"
+                  alt="Industrial Manufacturing"
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
               
               <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -130,12 +139,14 @@ export default function ProductsGallerySection() {
             >
               <div 
                 className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: 'url(/imgs/p-8.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              ></div>
+              >
+                <Image
+                  src="/imgs/p-8.jpg"
+                  alt="Construction"
+                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
               
               <div className="absolute inset-0 flex items-center justify-between px-6 sm:px-8 lg:px-10">

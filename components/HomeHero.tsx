@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 
 function CountUp({ end, suffix = '', duration = 1 }: { end: number, suffix?: string, duration?: number }) {
@@ -66,12 +67,9 @@ export default function HomeHero() {
           {/* Hexagonal Image Background Layer */}
           <div 
             className="absolute inset-0 bg-gray-200 overflow-hidden  md:[clip-path:polygon(0%_0%,93%_0,100%_15%,100%_100%,114.8%_100%,0%_55%)] [clip-path:polygon(0%_0%,100%_0%,100%_92%,0%_100%)]"
-            style={{
-              backgroundImage: 'url(/imgs/h-1.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          ></div>
+          >
+            <Image src="/imgs/h-1.jpg" alt="Hero background" fill unoptimized priority style={{ objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
 
           {/* Dark Polygon Overlay */}
           <div 

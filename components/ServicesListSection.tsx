@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function ServicesListSection() {
   return (
     <section className="w-full bg-white md:mt-0 -mt-15 md:py-12 mb-16">
@@ -54,44 +56,40 @@ export default function ServicesListSection() {
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {/* Img 1: TL */}
             <div 
-              className="w-full aspect-[4/3] shadow-md"
+              className="relative w-full aspect-[4/3] shadow-md"
               style={{
-                backgroundImage: 'url(/imgs/services/s-1.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 clipPath: 'polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%)'
               }}
-            ></div>
+            >
+              <Image src="/imgs/services/s-1.jpg" alt="Service 1" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+            </div>
             {/* Img 2: TR */}
             <div 
-              className="w-full aspect-[4/3] shadow-md"
+              className="relative w-full aspect-[4/3] shadow-md"
               style={{
-                backgroundImage: 'url(/imgs/services/s-2.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
               }}
-            ></div>
+            >
+              <Image src="/imgs/services/s-2.jpg" alt="Service 2" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+            </div>
             {/* Img 3: BL */}
             <div 
-              className="w-full aspect-[4/3] shadow-md"
+              className="relative w-full aspect-[4/3] shadow-md"
               style={{
-                backgroundImage: 'url(/imgs/services/s-3.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
               }}
-            ></div>
+            >
+              <Image src="/imgs/services/s-3.jpg" alt="Service 3" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+            </div>
             {/* Img 4: BR */}
             <div 
-              className="w-full aspect-[4/3] shadow-md"
+              className="relative w-full aspect-[4/3] shadow-md"
               style={{
-                backgroundImage: 'url(/imgs/services/s-4.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 clipPath: 'polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%)'
               }}
-            ></div>
+            >
+              <Image src="/imgs/services/s-4.jpg" alt="Service 4" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+            </div>
           </div>
         </div>
       </div>
@@ -147,44 +145,40 @@ export default function ServicesListSection() {
             <div className="w-[55%] grid grid-cols-2 p-5 gap-6 mt-12 lg:mt-8 mr-0 lg:mr-8">
               {/* Img 1: TL */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
+                className="relative w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
-                  backgroundImage: 'url(/imgs/services/s-1.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   clipPath: 'polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%)'
                 }}
-              ></div>
+              >
+                <Image src="/imgs/services/s-1.jpg" alt="Service 1" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+              </div>
               {/* Img 2: TR */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
+                className="relative w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
-                  backgroundImage: 'url(/imgs/services/s-2.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
                 }}
-              ></div>
+              >
+                <Image src="/imgs/services/s-2.jpg" alt="Service 2" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+              </div>
               {/* Img 3: BL */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
+                className="relative w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
-                  backgroundImage: 'url(/imgs/services/s-3.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
                 }}
-              ></div>
+              >
+                <Image src="/imgs/services/s-3.jpg" alt="Service 3" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+              </div>
               {/* Img 4: BR */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
+                className="relative w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
-                  backgroundImage: 'url(/imgs/services/s-4.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   clipPath: 'polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%)'
                 }}
-              ></div>
+              >
+                <Image src="/imgs/services/s-4.jpg" alt="Service 4" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+              </div>
             </div>
             
           </div>

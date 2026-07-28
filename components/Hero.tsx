@@ -1,5 +1,6 @@
 import Link from "next/link"
 import path from "path/win32"
+import Image from 'next/image'
 
 function Hero() {
   return (
@@ -11,11 +12,9 @@ function Hero() {
         className="relative w-full h-[600px] md:h-[calc(100vh-96px)] min-h-[500px] max-h-[900px] bg-gray-200 overflow-hidden shadow-xl"
           style={{
             clipPath: `polygon(18.95% 24.94%, 60.85% 24.94%, 100.81% 36.66%, 74.81% 59.79%, 51.68% 59.79%, 18.95% 36.66%)`,
-            backgroundImage: 'url(/imgs/h-1.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
           }}
         >
+          <Image src="/imgs/h-1.jpg" alt="Hero background" fill unoptimized priority style={{ objectFit: 'cover', objectPosition: 'center' }} />
           {/* Dark Polygon Overlay on the Left */}
           {/* This dark shape starts midway down the left side and slants to the bottom right. */}
         

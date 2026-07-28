@@ -44,15 +44,15 @@ const team: TeamMember[] = [
     id: 1, 
     name: 'John Doe',
     role: 'Managing Director', 
-    image: '/imgs/team/t-1.jpg',
+    image: '/imgs/team/t-7.jpeg',
     description: 'John brings over 20 years of experience in the industry, overseeing all major operations and guiding the strategic vision of the company. His leadership ensures we deliver top-tier quality every time and continuously push the boundaries of innovation.',
     socials: { facebook: '#', twitter: '#', instagram: '#' }
   },
   { 
     id: 2, 
+    image: '/imgs/team/t-1.jpg',
     name: 'Jane Smith',
     role: 'Operations Manager', 
-    image: '/imgs/team/t-2.jpg',
     description: 'Jane is the backbone of our daily operations. With her exceptional organizational skills, she ensures that all projects run smoothly, on time, and within budget, all while maintaining excellent communication with clients.',
     socials: { facebook: '#', twitter: '#', instagram: '#' }
   },

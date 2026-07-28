@@ -20,7 +20,7 @@ export default function ContactMap() {
           }}
         >
           <iframe
-            src="https://maps.google.com/maps?q=Obuasi,+Ashanti+Region,+Ghana&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=6CRW578R%2B55&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}

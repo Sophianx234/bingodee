@@ -97,9 +97,11 @@ Thank you.`;
                 Visit Us
               </h3>
               <p className="text-slate-600 text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed">
-                Plot No. 1, Block A, Sanso Anwonakrom<br />
-                Off Obuasi-Dunkwa Road<br />
-                Obuasi, Ashanti Region, Ghana
+                <strong>Address:</strong> P.O Box 1309<br />
+                <strong>Digital Address:</strong> AO-354-4922<br />
+                <strong>Location:</strong> Plot no.1 Block A,<br />
+                Sanso Anwonakrom off Obuasi Dunkwa Road,<br />
+                Obuasi-Ashanti Region, Ghana
               </p>
             </div>
           </div>

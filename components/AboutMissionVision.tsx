@@ -12,7 +12,7 @@ export default function AboutMissionVision() {
     clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' 
   }}
 >
-  <h3 className="absolute top-14 left-10 lg:left-14 text-[22px] lg:text-[24px] font-semibold text-[#1c1c1c]">
+  <h3 className="absolute top-14 left-10 lg:left-14 text-[22px] lg:text-[24px] font-semibold text-white">
     Our Mission
   </h3>
 </div>
@@ -37,7 +37,7 @@ export default function AboutMissionVision() {
             className="absolute -top-5 left-0  w-[95%] h-[60%] bg-[#00e5ff]"
             style={{ clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' }}
           >
-            <h3 className="absolute top-14 left-10 lg:left-14  text-[22px] lg:text-[24px] font-semibold text-[#1c1c1c]">
+            <h3 className="absolute top-14 left-10 lg:left-14  text-[22px] lg:text-[24px] font-semibold text-white">
               Our Vision
             </h3>
           </div>

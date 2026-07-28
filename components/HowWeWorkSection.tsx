@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Navigation } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export default function HowWeWorkSection() {
   const [activeStep, setActiveStep] = useState<number | null>(0);
@@ -11,7 +12,7 @@ export default function HowWeWorkSection() {
     {
       title: "Consultation",
       description: "We start by understanding your unique requirements, technical specifications, and project goals to ensure we align perfectly with your vision.",
-      image: "/imgs/h-2.png"
+      image: "/imgs/products/Gate Valves.jpg.jpeg"
     },
     {
       title: "Technical Assessment",
@@ -31,7 +32,7 @@ export default function HowWeWorkSection() {
     {
       title: "Project Support",
       description: "Our commitment doesn't end at delivery. We provide ongoing technical support, installation guidance, and maintenance consultation for total peace of mind.",
-      image: "/imgs/team/t-3.jpg" 
+      image: "/imgs/products/Knife%20Gate%20Valve%20(2).jpg.jpeg" 
     }
   ];
 
@@ -106,7 +107,7 @@ export default function HowWeWorkSection() {
                 transition={{ duration: 0.4 }}
                 className="absolute top-0 left-0 w-full h-full shadow-2xl"
                 style={{
-                  backgroundImage: `url(${activeStep !== null ? steps[activeStep].image : steps[0].image})`,
+                  backgroundImage: `url('${activeStep !== null ? steps[activeStep].image : steps[0].image}')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
@@ -115,9 +116,9 @@ export default function HowWeWorkSection() {
             </AnimatePresence>
           </div>
 
-          <button className="bg-primary hover:bg-primary-hover text-white font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-lg">
-            Request a Quote
-          </button>
+          <Link href="/contact" className="bg-primary hover:bg-primary-hover text-white font-semibold text-[15px] px-8 py-3.5 transition-colors shadow-lg">
+            Request Service
+          </Link>
 
         </div>
 

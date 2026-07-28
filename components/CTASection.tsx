@@ -29,9 +29,9 @@ export default function CTASection() {
           <div 
             className="absolute top-0 right-0 w-full h-full bg-gray-100 transition-transform duration-700 group-hover:scale-105"
             style={{
-              backgroundImage: 'url(/imgs/cta-1.png)',
+              backgroundImage: 'url("/imgs/products/Non-Return%20Valve.jpg.jpeg")',
               backgroundSize: 'contain',
-              backgroundPosition: 'center',
+              backgroundPosition: '50% 55%',
               // Polygon matches s-4.png right image:
               clipPath: 'polygon(0% 25.19%, 80.8% 25.19%, 100% 38.4%, 100% 74.81%, 17.46% 74.81%, 0% 54.61%)'
             }}

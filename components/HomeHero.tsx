@@ -89,10 +89,10 @@ export default function HomeHero() {
             </p>
             <div>
               <Link 
-                href="/services" 
+                href="/products" 
                 className="inline-flex  text-white  bg-primary font-bold text-[14px] md:text-[15px] px-8 py-3.5 transition-colors shadow-lg rounded-sm uppercase tracking-wide"
               >
-                Explore Services
+                Explore Products
               </Link>
             </div>
           </div>

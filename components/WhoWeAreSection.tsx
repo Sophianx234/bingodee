@@ -14,10 +14,10 @@ export default function WhoWeAreSection() {
               className="relative w-full max-w-[500px] lg:max-w-none aspect-square lg:aspect-auto lg:h-[37rem] scale-100 lg:scale-110 z-10 transition-transform duration-500"
               style={{
                 clipPath: 'polygon(0% 24.88%, 81.34% 24.88%, 100% 38.06%, 100% 74.13%, 60.95% 74.13%, 35.7% 61.33%, 0% 43.64%)',
-                backgroundImage: 'url(/imgs/h-2.png)',
+                backgroundImage: "url('/imgs/products/Gate%20Valves.jpg.jpeg')",
                 backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
+                backgroundPosition: '20% 50%',
               }}
             >
             </div>

@@ -8,7 +8,7 @@ export default function AboutStorySection() {
           <div 
             className="absolute top-0 left-0 w-full h-full bg-gray-100 shadow-xl transition-transform duration-700 group-hover:scale-[1.02]"
             style={{
-              backgroundImage: 'url(/imgs/h-2.png)', // Specified by user
+              backgroundImage: "url('/imgs/products/Gate%20Valves.jpg.jpeg')", // Specified by user
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               // Top-left: square, Top-right: cut, Bottom-right: square, Bottom-left: cut

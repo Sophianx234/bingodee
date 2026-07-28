@@ -20,7 +20,7 @@ export default function ServicesListSection() {
           className="w-full bg-[#ffb700] py-12 px-6 relative z-10"
           style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%)' }}
         >
-          <h3 className="text-[28px] sm:text-3xl font-bold text-[#1a1a1a] mb-6">
+          <h3 className="text-[28px] sm:text-3xl font-bold text-white mb-6">
             Engineering Services
           </h3>
         </div>
@@ -108,7 +108,7 @@ export default function ServicesListSection() {
             style={{ clipPath: 'polygon(0% 92.82%, 81.46% 92.82%, 100% 92.84%, 100% 47.4%, 86.9% 47.4%, 99.75% 31.9%, 99.75% 23.76%, 68.32% 23.76%, 0% 23.76%)' }}
           >
             <h3 
-              className="absolute left-12 lg:left-12 text-[28px] lg:text-[32px] font-semibold text-[#1a1a1a]"
+              className="absolute left-12 lg:left-12 text-[28px] lg:text-[32px] font-semibold text-white"
               style={{ top: '30%' }}
             >
               Engineering Services
@@ -147,7 +147,7 @@ export default function ServicesListSection() {
             <div className="w-[55%] grid grid-cols-2 p-5 gap-6 mt-12 lg:mt-8 mr-0 lg:mr-8">
               {/* Img 1: TL */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 hover:scale-105"
+                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
                   backgroundImage: 'url(/imgs/services/s-1.jpg)',
                   backgroundSize: 'cover',
@@ -157,7 +157,7 @@ export default function ServicesListSection() {
               ></div>
               {/* Img 2: TR */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 hover:scale-105"
+                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
                   backgroundImage: 'url(/imgs/services/s-2.jpg)',
                   backgroundSize: 'cover',
@@ -167,7 +167,7 @@ export default function ServicesListSection() {
               ></div>
               {/* Img 3: BL */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 hover:scale-105"
+                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
                   backgroundImage: 'url(/imgs/services/s-3.jpg)',
                   backgroundSize: 'cover',
@@ -177,7 +177,7 @@ export default function ServicesListSection() {
               ></div>
               {/* Img 4: BR */}
               <div 
-                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 hover:scale-105"
+                className="w-full aspect-[4/3] shadow-md transition-transform duration-500 "
                 style={{
                   backgroundImage: 'url(/imgs/services/s-4.jpg)',
                   backgroundSize: 'cover',

@@ -8,14 +8,14 @@ export default function AboutStorySection() {
         {/* Left Side: Image with Geometric Cut */}
         <div className="w-full max-w-[500px] md:max-w-none md:w-[60%] lg:w-[50%] aspect-[4/3] md:aspect-auto md:h-[21rem] lg:h-[25rem] relative group mx-auto md:mx-0">
           <div 
-            className="absolute top-0 left-0 w-full h-full bg-gray-100 shadow-xl transition-transform duration-700 group-hover:scale-[1.02]"
+            className="absolute top-0 left-0 w-full h-full bg-gray-100 shadow-xl transition-transform duration-700 "
             style={{
               // Top-left: square, Top-right: cut, Bottom-right: square, Bottom-left: cut
               clipPath: 'polygon(0% 0%, 80.8% 0%, 100% 26.6%, 100% 100%, 17.5% 100%, 0% 59.3%)'
             }}
           >
             <Image
-              src="/imgs/products/Gate%20Valves.jpg.jpeg"
+              src="/imgs/products/Knife Gate Valve (2).jpg.jpeg"
               alt="Our Story"
               fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               style={{ objectFit: 'cover', objectPosition: 'center' }}

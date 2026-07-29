@@ -77,18 +77,31 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col space-y-5 justify-center mt-2 md:mt-0">
-            <div className="flex items-center text-gray-700">
-              <Phone className="w-[18px] h-[18px] mr-4 text-[#1a1a1a]" strokeWidth={2.5} />
-              <span className="text-[15px]">(+233) 24 491 9613</span>
+          <div className="flex flex-col space-y-6 justify-center mt-2 md:mt-0 max-w-[340px]">
+            <div className="flex items-start text-gray-700">
+              <Phone className="w-[20px] h-[20px] mr-4 mt-0.5  shrink-0" strokeWidth={2} />
+              <div className="flex  gap-1 space-y-1">
+                <span className="text-[15px] hover:text-primary transition-colors cursor-pointer">0244919613</span>/
+                <span className="text-[15px] hover:text-primary transition-colors cursor-pointer"> 0243127833</span>
+              </div>
             </div>
-            <div className="flex items-center text-gray-700">
-              <Mail className="w-[18px] h-[18px] mr-4 text-[#1a1a1a]" strokeWidth={2.5} />
-              <span className="text-[15px]">info@bingodee.com</span>
+            
+            <div className="flex items-start text-gray-700">
+              <Mail className="w-[20px] h-[20px] mr-4 mt-0.5  shrink-0" strokeWidth={2} />
+              <a href="mailto:info@bingodee.com" className="text-[15px] hover:text-primary transition-colors">
+                info@bingodee.com
+              </a>
             </div>
-            <div className="flex items-center text-gray-700">
-              <MapPin className="w-[18px] h-[18px] mr-4 text-[#1a1a1a]" strokeWidth={2.5} />
-              <span className="text-[15px]">Obuasi, Ghana</span>
+            
+            <div className="flex items-start text-gray-700">
+              <MapPin className="w-[20px] h-[20px] mr-4 mt-0.5  shrink-0" strokeWidth={2} />
+              <div className="text-[15px] leading-relaxed flex flex-wrap">
+                <span className=" ">Plot no.1 Block A</span>
+                <span className="text-slate-600">Sanso Anwonakrom, Off Obuasi Dunkwa Road</span>
+                <span className="text-slate-600">Obuasi-Ashanti Region, Ghana</span>
+                <span className="text-[14px] text-slate-500">P.O Box 1309</span>
+                <span className="text-[14px] text-slate-500">AO-354-4922</span>
+              </div>
             </div>
           </div>
           

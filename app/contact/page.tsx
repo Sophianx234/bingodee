@@ -3,7 +3,7 @@ import ContactFormSection from '@/components/ContactFormSection';
 import ContactMap from '@/components/ContactMap';
 
 export const metadata = {
-  title: 'Contact Us | Bingodee Co. Ltd.',
+  title: 'Contact Us',
   description: 'Get in touch with our team for engineering expertise, industrial materials or fabrication services.',
 };
 

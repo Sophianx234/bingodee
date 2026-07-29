@@ -7,6 +7,17 @@ import { Navigation, X } from 'lucide-react';
 
 export default function IndustrialSolutionsSection() {
   const cards = [
+    
+    {
+      id: 3,
+      title: "Engineering Supplies",
+      color: "bg-[#f97316]",
+      image: "/imgs/products/Flanges%20(2).jpg.jpeg",
+      list: [
+        ["Steel", "Valves", "Pumps", "HDPE", "Grinding Media"],
+        ["Fasteners", "Piping Systems"]
+      ]
+    },
     {
       id: 1,
       title: "Welding & Fabrication",
@@ -27,16 +38,6 @@ export default function IndustrialSolutionsSection() {
         "PPE",
         "Office Equipment",
         "General Merchandise"
-      ]
-    },
-    {
-      id: 3,
-      title: "Engineering Supplies",
-      color: "bg-[#f97316]",
-      image: "/imgs/products/Flanges%20(2).jpg.jpeg",
-      list: [
-        ["Steel", "Valves", "Pumps", "HDPE", "Grinding Media"],
-        ["Fasteners", "Piping Systems"]
       ]
     }
   ];

@@ -13,7 +13,7 @@ export default function HowWeWorkSection() {
     {
       title: "Consultation",
       description: "We start by understanding your unique requirements, technical specifications, and project goals to ensure we align perfectly with your vision.",
-      image: "/imgs/products/Gate Valves.jpg.jpeg"
+      image: "/imgs/products/Carbon-Steel-Butt-Welding-Fittings.jpg.jpeg"
     },
     {
       title: "Technical Assessment",
@@ -33,7 +33,7 @@ export default function HowWeWorkSection() {
     {
       title: "Project Support",
       description: "Our commitment doesn't end at delivery. We provide ongoing technical support, installation guidance, and maintenance consultation for total peace of mind.",
-      image: "/imgs/products/Knife%20Gate%20Valve%20(2).jpg.jpeg" 
+      image: "/imgs/products/Ball%20Valves.jpg.jpeg" 
     }
   ];
 

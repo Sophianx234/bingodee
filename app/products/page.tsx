@@ -3,7 +3,7 @@ import ProductsListSection from '@/components/ProductsListSection';
 import ProductsGallerySection from '@/components/ProductsGallerySection';
 
 export const metadata = {
-  title: 'Our Products | Bingodee Co. Ltd.',
+  title: 'Our Products',
   description: 'View our comprehensive range of industrial products for mining, civil engineering and infrastructure sectors across Ghana.',
 };
 

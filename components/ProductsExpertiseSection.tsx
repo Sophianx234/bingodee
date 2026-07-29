@@ -34,7 +34,7 @@ export default function ProductsExpertiseSection() {
               }}
             >
               <Image
-                src="/imgs/h-2.png"
+                src="/imgs/products/Stanchions%20(2).jpg.jpeg"
                 alt="Pipes"
                 fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{ objectFit: 'contain', objectPosition: 'center' }}
@@ -59,7 +59,7 @@ export default function ProductsExpertiseSection() {
               }}
             >
               <Image
-                src="/imgs/h-1.jpg"
+                src="/imgs/products/Fastners.jpg.jpeg"
                 alt="Flanges"
                 fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{ objectFit: 'contain', objectPosition: 'center' }}

@@ -7,8 +7,26 @@ import Footer from "@/components/Footer";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
-  title: "Bingodee Co. Ltd.",
-  description: "Delivering Engineering Excellence Across Ghana!",
+  metadataBase: new URL('https://bingodee.com'),
+  title: {
+    default: "Bingodee Co. Ltd. - Engineering Excellence Across Ghana",
+    template: "%s | Bingodee Co. Ltd.",
+  },
+  description: "Bingodee Co. Ltd. delivers top-tier engineering services, industrial materials, fabrication, and heavy equipment across Ghana.",
+  keywords: ["Engineering Ghana", "Industrial Materials", "Fabrication Services", "Heavy Equipment Ghana", "Bingodee", "Obuasi Engineering"],
+  openGraph: {
+    title: "Bingodee Co. Ltd. - Engineering Excellence Across Ghana",
+    description: "Bingodee Co. Ltd. delivers top-tier engineering services, industrial materials, fabrication, and heavy equipment across Ghana.",
+    url: 'https://bingodee.com',
+    siteName: 'Bingodee Co. Ltd.',
+    locale: 'en_GH',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Bingodee Co. Ltd.",
+    description: "Delivering Engineering Excellence Across Ghana!",
+  },
 };
 
 export default function RootLayout({

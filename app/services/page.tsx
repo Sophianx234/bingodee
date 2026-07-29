@@ -4,8 +4,8 @@ import IndustrialSolutionsSection from '@/components/IndustrialSolutionsSection'
 import HowWeWorkSection from '@/components/HowWeWorkSection';
 
 export const metadata = {
-  title: 'Our Services | Bingodee Co. Ltd.',
-  description: 'Explore our integrated engineering services and industrial procurement solutions.',
+  title: 'Our Services',
+  description: 'Explore our  engineering services and industrial procurement solutions.',
 };
 
 export default function ServicesPage() {

@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     role: 'Operations Director',
     company: 'Apex Industrial Corp',
     content: "Bingo Dee has completely transformed our supply chain reliability. Their engineering supplies are top-tier, and their project consultation saved us over two months of downtime on our recent expansion.",
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150'
+    image: '/imgs/profiles/p-3.jpg'
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     role: 'Lead Project Manager',
     company: 'Westgate Construction',
     content: "The level of precision in their welding and fabrication is unmatched. We contracted them for heavy structural works, and they delivered perfectly aligned components ahead of schedule.",
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150'
+    image: '/imgs/profiles/p-2.jpg'
   },
   {
     id: 3,
@@ -36,7 +36,8 @@ const testimonials: Testimonial[] = [
     role: 'Procurement Head',
     company: 'Nexus Mining Solutions',
     content: "Sourcing specialized industrial valves and piping systems used to be a headache until we partnered with Bingo Dee. Their inventory scale and immediate dispatch capabilities are phenomenal.",
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150'
+    // image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150'
+    image: '/imgs/profiles/p-4.jpg'
   },
   {
     id: 4,
@@ -44,7 +45,7 @@ const testimonials: Testimonial[] = [
     role: 'Chief Engineer',
     company: 'Oceanic Refining',
     content: "We rely on them exclusively for all our civil and structural needs. Their team doesn't just execute; they consult, optimize, and bring serious technical expertise to every single blueprint.",
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150'
+    image: '/imgs/profiles/p-1x.jpg'
   }
 ];
 

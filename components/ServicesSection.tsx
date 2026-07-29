@@ -33,14 +33,7 @@ export default function ServicesSection() {
   };
 
   const services = [
-    {
-      title: "Engineering Services",
-      titleColor: "text-white",
-      bgColor: "bg-[#ffc107]",
-      desc: "Civil, structural and construction management solutions.",
-      image: "/imgs/services/s-1.jpg"
-    },
-    {
+      {
       title: "Engineering Supplies",
       titleColor: "text-white",
       bgColor: "bg-primary",
@@ -48,8 +41,16 @@ export default function ServicesSection() {
       image: "/imgs/services/s-2.jpg"
     },
     {
+      title: "Engineering Services",
+      titleColor: "text-white",
+      bgColor: "bg-[#ffc107]",
+      desc: "Civil, structural and construction management solutions.",
+      image: "/imgs/services/s-1.jpg"
+    },
+  
+    {
       title: "Welding & Fabrication",
-      titleColor: "text-[#171717]",
+      titleColor: "text-white",
       bgColor: "bg-[#00e5ff]",
       desc: "Precision fabrication and welding services delivered from our modern workshop.",
       image: "/imgs/services/s-3.jpg"

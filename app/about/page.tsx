@@ -5,7 +5,7 @@ import AboutValuesSection from '@/components/AboutValuesSection';
 import AboutTeamSection from '@/components/AboutTeamSection';
 
 export const metadata = {
-  title: 'About Us | Bingodee Co. Ltd.',
+  title: 'About Us',
   description: 'Learn about Bingodee Company Limited and our decades of engineering excellence.',
 };
 

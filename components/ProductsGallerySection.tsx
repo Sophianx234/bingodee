@@ -1,4 +1,4 @@
-import { Pickaxe, HardHat, Building2, Factory, Ruler } from 'lucide-react';
+import { Pickaxe, HardHat, Building2, Factory, Ruler, Flame } from 'lucide-react';
 import Image from 'next/image';
 
 export default function ProductsGallerySection() {
@@ -19,15 +19,12 @@ export default function ProductsGallerySection() {
           
           {/* Top Row - 2 Columns */}
           <div className="grid grid-cols-2 gap-3 md:gap-6 h-[160px] sm:h-[220px] md:h-[340px]">
-            
             {/* Card 1: Mining */}
             <div 
               className="relative w-full h-full group overflow-hidden shadow-lg"
               style={{ clipPath: 'polygon(0 0, 92% 0, 100% 15%, 100% 100%, 8% 100%, 0 85%)' }}
             >
-              <div 
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-              >
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                 <Image
                   src="/imgs/p-4.jpg"
                   alt="Mining"
@@ -52,9 +49,7 @@ export default function ProductsGallerySection() {
               className="relative w-full h-full group overflow-hidden shadow-lg"
               style={{ clipPath: 'polygon(8% 0, 100% 0, 100% 85%, 92% 100%, 0 100%, 0 15%)' }}
             >
-              <div 
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-              >
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                 <Image
                   src="/imgs/p-5.jpg"
                   alt="Civil Engineering"
@@ -75,7 +70,7 @@ export default function ProductsGallerySection() {
             </div>
           </div>
 
-          {/* Bottom Row - 3 Columns (2 Cols on mobile with last item spanning 2) */}
+          {/* Middle Row - 3 Columns (2 on mobile) */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
             
             {/* Card 3: Infrastructure */}
@@ -83,9 +78,7 @@ export default function ProductsGallerySection() {
               className="relative w-full h-[160px] sm:h-[220px] md:h-[280px] group overflow-hidden shadow-lg"
               style={{ clipPath: 'polygon(0 0, 85% 0, 100% 18%, 100% 100%, 15% 100%, 0 82%)' }}
             >
-              <div 
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-              >
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                 <Image
                   src="/imgs/p-6.jpg"
                   alt="Infrastructure"
@@ -110,9 +103,7 @@ export default function ProductsGallerySection() {
               className="relative w-full h-[160px] sm:h-[220px] md:h-[280px] group overflow-hidden shadow-lg"
               style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 82%, 85% 100%, 0 100%, 0 18%)' }}
             >
-              <div 
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-              >
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                 <Image
                   src="/imgs/p-7.jpg"
                   alt="Industrial Manufacturing"
@@ -137,9 +128,7 @@ export default function ProductsGallerySection() {
               className="relative w-full col-span-2 md:col-span-1 h-[160px] sm:h-[220px] md:h-[280px] group overflow-hidden shadow-lg"
               style={{ clipPath: 'polygon(0 0, 85% 0, 100% 18%, 100% 100%, 15% 100%, 0 82%)' }}
             >
-              <div 
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-              >
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                 <Image
                   src="/imgs/p-8.jpg"
                   alt="Construction"
@@ -158,10 +147,39 @@ export default function ProductsGallerySection() {
                 </div>
               </div>
             </div>
-
+            
+          </div>
+          
+          {/* Bottom Row - 1 Column (Full Width) */}
+          <div className="w-full h-[160px] sm:h-[220px] md:h-[280px] lg:h-[320px]">
+            {/* Card 6: Oil & Gas */}
+            <div 
+              className="relative w-full h-full group overflow-hidden shadow-lg"
+              style={{ clipPath: 'polygon(4% 0, 100% 0, 100% 85%, 96% 100%, 0 100%, 0 15%)' }}
+            >
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                <Image
+                  src="https://images.unsplash.com/photo-1516937941344-00b4e0337589"
+                  alt="Oil & Gas"
+                  fill sizes="100vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+              
+              <div className="absolute inset-0 flex items-center justify-between px-8 sm:px-12 md:px-20 lg:px-24">
+                <h3 className="text-white text-[20px] sm:text-2xl md:text-4xl font-semibold tracking-wide">
+                  Oil & Gas
+                </h3>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-none">
+                  <Flame className="text-white w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );

@@ -1,25 +1,54 @@
+'use client';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+
+const storyImages = [
+  "/imgs/products/Assorted Valves (2).jpg.jpeg",
+  "/imgs/products/Assorted Items.jpg.jpeg",
+  "/imgs/products/Stanchions (2).jpg.jpeg",
+  "/imgs/products/Conveyor Belts.jpeg"
+];
 
 export default function AboutStorySection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % storyImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="story" className="w-full bg-white -mt-18 sm:-mt-12 md:mt-0 pt-6 md:pt-12 pb-8 md:pb-12 relative z-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 lg:gap-24">
         
-        {/* Left Side: Image with Geometric Cut */}
-        <div className="w-full max-w-[500px] md:max-w-none md:w-[60%] lg:w-[50%] aspect-[4/3] md:aspect-auto md:h-[21rem] lg:h-[25rem] relative group mx-auto md:mx-0">
+        {/* Left Side: Images with Geometric Cut */}
+        <div className="w-full max-w-[500px] md:max-w-none md:w-[60%] lg:w-[50%] aspect-[4/3] md:aspect-auto md:h-[21rem] lg:h-[25rem] relative mx-auto md:mx-0">
           <div 
-            className="absolute top-0 left-0 w-full h-full bg-gray-100 shadow-xl transition-transform duration-700 "
+            className="absolute top-0 left-0 w-full h-full bg-gray-100 shadow-xl overflow-hidden"
             style={{
               // Top-left: square, Top-right: cut, Bottom-right: square, Bottom-left: cut
               clipPath: 'polygon(0% 0%, 80.8% 0%, 100% 26.6%, 100% 100%, 17.5% 100%, 0% 59.3%)'
             }}
           >
-            <Image
-              src="/imgs/products/Knife Gate Valve (2).jpg.jpeg"
-              alt="Our Story"
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
-            />
+            {storyImages.map((src, index) => (
+              <div 
+                key={src}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt={`Our Story Image ${index + 1}`}
+                  fill 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  priority={index === 0}
+                />
+              </div>
+            ))}
           </div>
         </div>
 

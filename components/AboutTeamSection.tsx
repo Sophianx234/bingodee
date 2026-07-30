@@ -42,10 +42,10 @@ const team: TeamMember[] = [
   
   { 
     id: 1, 
-    name: 'John Doe',
+    name: 'Alfred Kofi Bingo ',
     role: 'Managing Director', 
     image: '/imgs/team/t-7.jpeg',
-    description: 'John brings over 20 years of experience in the industry, overseeing all major operations and guiding the strategic vision of the company. His leadership ensures we deliver top-tier quality every time and continuously push the boundaries of innovation.',
+    description: 'Alfred brings over 20 years of experience in the industry, overseeing all major operations and guiding the strategic vision of the company. His leadership ensures we deliver top-tier quality every time and continuously push the boundaries of innovation.',
     socials: { facebook: '#', twitter: '#', instagram: '#' }
   },
   { 

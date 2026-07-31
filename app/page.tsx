@@ -7,6 +7,7 @@ import WhyTrustedSection from '@/components/WhyTrustedSection';
 import ProductsExpertiseSection from '@/components/ProductsExpertiseSection';
 import TestimonialSection from '@/components/TestimonialSection';
 import ProjectDemoSection from '@/components/ProjectDemoSection';
+import NewsInsightsSection from '@/components/NewsInsightsSection';
 import CTASection from '@/components/CTASection';
 
 export default function Home() {
@@ -20,7 +21,8 @@ export default function Home() {
       <ServicesSection />
       <WhyTrustedSection />
       <ProductsExpertiseSection />
-      <ProjectDemoSection />
+      {/* <ProjectDemoSection /> */}
+      <NewsInsightsSection />
       <TestimonialSection />
       <CTASection />
 

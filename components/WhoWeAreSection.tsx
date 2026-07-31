@@ -1,7 +1,27 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+
+const whoWeAreImages = [
+  "/imgs/products/Gate%20Valves.jpg.jpeg",
+  "/imgs/products/Assorted Valves (2).jpg.jpeg",
+  "/imgs/products/Assorted Items.jpg.jpeg",
+  "/imgs/products/Stanchions (2).jpg.jpeg",
+  "/imgs/products/Conveyor Belts.jpeg"
+];
 
 export default function WhoWeAreSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % whoWeAreImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="w-full bg-white pb-16 - md:-mt-15 lg:py-0 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
@@ -12,17 +32,27 @@ export default function WhoWeAreSection() {
             
             {/* Main Image Container */}
             <div 
-              className="relative w-full max-w-[500px] lg:max-w-none aspect-square lg:aspect-auto lg:h-[37rem] scale-100 lg:scale-110 z-10 transition-transform duration-500"
+              className="relative w-full max-w-[500px] lg:max-w-none aspect-square lg:aspect-auto lg:h-[37rem] scale-100 lg:scale-110 z-10 transition-transform duration-500 overflow-hidden"
               style={{
                 clipPath: 'polygon(0% 24.88%, 81.34% 24.88%, 100% 38.06%, 100% 74.13%, 60.95% 74.13%, 35.7% 61.33%, 0% 43.64%)',
               }}
             >
-              <Image
-                src="/imgs/products/Gate%20Valves.jpg.jpeg"
-                alt="Who We Are"
-                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: 'contain', objectPosition: '20% 50%' }}
-              />
+              {whoWeAreImages.map((src, index) => (
+                <div 
+                  key={src}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                >
+                  <Image
+                    src={src}
+                    alt={`Who We Are Image ${index + 1}`}
+                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'contain', objectPosition: '20% 50%' }}
+                    priority={index === 0}
+                  />
+                </div>
+              ))}
             </div>
 
             {/* Blue Shape Overlay */}

@@ -11,7 +11,7 @@ export default function AboutValuesSection() {
     {
       title: "Security of Supply",
       description: "Through our vertical integrated supply chain model, we guarantee security of supply. Local supply capacity is augmented with international manufacturing partnership capacity and strategic safety stock.",
-      image: "/imgs/values/v-1.jpg",
+      image: "https://images.unsplash.com/photo-1642797735471-3e90055c5ff9?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       icon: <ShieldCheck className="w-6 h-6" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -20,7 +20,7 @@ export default function AboutValuesSection() {
     {
       title: "Relevance",
       description: "To continually stay abreast and be responsive to market conditions and customer expectations as part of the DNA of our organization. We aim at providing solutions that are both fit for purpose and competitive, but more importantly designed to sustain long-term relationship due to trust and a mutual beneficial partnering.",
-      image: "/imgs/values/v-2.jpg",
+      image: "https://plus.unsplash.com/premium_photo-1682309553075-c84ea8d9d49a",
       icon: <Activity className="w-6 h-6" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -38,7 +38,7 @@ export default function AboutValuesSection() {
     {
       title: "Individuals",
       description: "We work around you and your needs, providing you with a tailored solution for your organisation.",
-      image: "/imgs/values/v-4.jpg",
+      image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca",
       icon: <Users className="w-6 h-6" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -47,7 +47,7 @@ export default function AboutValuesSection() {
     {
       title: "Fully flexible",
       description: "You can retain us for one project or multiple projects; it’s completely up to you.",
-      image: "/imgs/values/v-5.jpg",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2068&auto=format&fit=crop",
       icon: <Handshake className="w-6 h-6" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -56,7 +56,7 @@ export default function AboutValuesSection() {
     {
       title: "Affordable",
       description: "Our services and products are affordable but durable with payment options to suit your business.",
-      image: "/imgs/values/v-6.jpg",
+      image: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0",
       icon: <DollarSign className="w-6 h-6" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -65,7 +65,7 @@ export default function AboutValuesSection() {
     {
       title: "Our code",
       description: "We genuinely care for and support organizations within the third sector, we are ethical and transparent in all of our work.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1548838670-cb67b43a6adb",
       icon: <Gem className="w-6 h-6" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -121,7 +121,8 @@ export default function AboutValuesSection() {
               <Image
                 src={val.image}
                 alt={val.title}
-                fill sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 14vw"
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={95}
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
@@ -178,6 +179,7 @@ export default function AboutValuesSection() {
                 alt={selectedValue.title}
                 fill
                 sizes="(max-width: 640px) 100vw, 50vw"
+                quality={95}
                 style={{ objectFit: 'cover' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

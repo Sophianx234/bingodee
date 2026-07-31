@@ -6,66 +6,48 @@ import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 const products = [
-  { "id": 1, "title": "Abrasive Compounds", "image": "/imgs/products/Abrasive Compounds.jpeg" },
-  { "id": 2, "title": "Assorted Items", "image": "/imgs/products/Assorted Items.jpg.jpeg" },
-  { "id": 3, "title": "Assorted Valves", "image": "/imgs/products/Assorted Valves (2).jpg.jpeg" },
-  { "id": 4, "title": "Assorted Valves", "image": "/imgs/products/Assorted Valves.jpg.jpeg" },
-  { "id": 5, "title": "Ball Valve Lever", "image": "/imgs/products/Ball Valve Lever.jpg.jpeg" },
-  { "id": 6, "title": "Ball Valves", "image": "/imgs/products/Ball Valves.jpg.jpeg" },
-  { "id": 7, "title": "Butterfly Valve Gear", "image": "/imgs/products/Butterfly Valve Gear.jpg.jpeg" },
-  { "id": 8, "title": "Butterfly Valve Lever", "image": "/imgs/products/Butterfly Valve Lever.jpg.jpeg" },
-  { "id": 9, "title": "Carbon Steel Butt Welding Fittings", "image": "/imgs/products/Carbon-Steel-Butt-Welding-Fittings.jpg.jpeg" },
-  { "id": 10, "title": "Conveyor Belt", "image": "/imgs/products/Conveyor Belt.jpg.jpeg" },
-  { "id": 11, "title": "Conveyor Belts", "image": "/imgs/products/Conveyor Belts.jpeg" },
-  { "id": 12, "title": "Cover strip   Conveyor", "image": "/imgs/products/Cover strip - Conveyor.jpg.jpeg" },
-  { "id": 13, "title": "Diaphragm Valve", "image": "/imgs/products/Diaphragm Valve.jpg.jpeg" },
-  { "id": 14, "title": "Disc", "image": "/imgs/products/Disc.jpg.jpeg" },
-  { "id": 15, "title": "Fastners", "image": "/imgs/products/Fastners.jpg.jpeg" },
-  { "id": 16, "title": "Flanged Ball Valve", "image": "/imgs/products/Flanged Ball Valve.jpg (1).jpeg" },
-  { "id": 17, "title": "Flanged Ball Valve", "image": "/imgs/products/Flanged Ball Valve.jpg.jpeg" },
-  { "id": 18, "title": "Flanged Ball Valves", "image": "/imgs/products/Flanged Ball Valves (2).jpg.jpeg" },
-  { "id": 19, "title": "Flanged Ball Valves", "image": "/imgs/products/Flanged Ball Valves.jpg.jpeg" },
-  { "id": 20, "title": "Flanges", "image": "/imgs/products/Flanges (2).jpg.jpeg" },
-  { "id": 21, "title": "Flanges", "image": "/imgs/products/Flanges.jpg.jpeg" },
-  { "id": 22, "title": "Galvanize Stair Treads", "image": "/imgs/products/Galvanize Stair Treads.jpg.jpeg" },
-  { "id": 23, "title": "Gate Valve", "image": "/imgs/products/Gate Valve.jpg.jpeg" },
-  { "id": 24, "title": "Gate Valves", "image": "/imgs/products/Gate Valves.jpg.jpeg" },
-  { "id": 25, "title": "Helmitin Glue", "image": "/imgs/products/Helmitin Glue.png" },
-  { "id": 26, "title": "IMG 9495 copy", "image": "/imgs/products/IMG_9495 copy.jpg.jpeg" },
-  { "id": 27, "title": "IMG 9496 copy", "image": "/imgs/products/IMG_9496 copy.jpg.jpeg" },
-  { "id": 28, "title": "IMG 9530 copy", "image": "/imgs/products/IMG_9530 copy.jpg.jpeg" },
-  { "id": 29, "title": "IMG 9537 copy", "image": "/imgs/products/IMG_9537 copy.jpg.jpeg" },
-  { "id": 30, "title": "Knife Gate Valve", "image": "/imgs/products/Knife Gate Valve (2).jpg.jpeg" },
-  { "id": 31, "title": "Knife Gate Valve", "image": "/imgs/products/Knife Gate Valve.jpg.jpeg" },
-  { "id": 32, "title": "Non Metallic Pump", "image": "/imgs/products/Non Metallic Pump.jpg.jpeg" },
-  { "id": 33, "title": "Non Return Valve", "image": "/imgs/products/Non-Return Valve (2).jpg.jpeg" },
-  { "id": 34, "title": "Non Return Valve Threaded", "image": "/imgs/products/Non-Return Valve Threaded.jpg (1).jpeg" },
-  { "id": 35, "title": "Non Return Valve Threaded", "image": "/imgs/products/Non-Return Valve Threaded.jpg.jpeg" },
-  { "id": 36, "title": "Non Return Valve", "image": "/imgs/products/Non-Return Valve.jpg.jpeg" },
-  { "id": 37, "title": "Phosphor Bronze Bars", "image": "/imgs/products/Phosphor-Bronze Bars.jpg.jpeg" },
-  { "id": 38, "title": "Pipe Bandage", "image": "/imgs/products/Pipe Bandage.jpg.jpeg" },
-  { "id": 39, "title": "Pulley", "image": "/imgs/products/Pulley.jpg.jpeg" },
-  { "id": 40, "title": "Slurry Knife Gate Valve", "image": "/imgs/products/Slurry Knife Gate Valve.jpg.jpeg" },
-  { "id": 41, "title": "Slurry Knige Gate Valve", "image": "/imgs/products/Slurry Knige Gate Valve.jpg.jpeg" },
-  { "id": 42, "title": "Solenoid Valve", "image": "/imgs/products/Solenoid Valve.jpg.jpeg" },
-  { "id": 43, "title": "Spiral Wrap", "image": "/imgs/products/Spiral Wrap.jpg (1).jpeg" },
-  { "id": 44, "title": "Spiral Wrap", "image": "/imgs/products/Spiral Wrap.jpg.jpeg" },
-  { "id": 45, "title": "Stanchions", "image": "/imgs/products/Stanchions (2).jpg.jpeg" },
-  { "id": 46, "title": "Stanchions", "image": "/imgs/products/Stanchions.jpg.jpeg" },
-  { "id": 47, "title": "Steel fitting", "image": "/imgs/products/Steel fitting.jpg.jpeg" },
-  { "id": 48, "title": "Steel Fittings", "image": "/imgs/products/Steel Fittings.jpg.jpeg" },
-  { "id": 49, "title": "Taper Lock Bush", "image": "/imgs/products/Taper-Lock-Bush.jpg.jpeg" },
-  { "id": 50, "title": "Threaded Rods", "image": "/imgs/products/Threaded Rods.jpg.jpeg" },
-  { "id": 51, "title": "Valves", "image": "/imgs/products/Valves.jpg.jpeg" },
-  { "id": 52, "title": "Vent Valve", "image": "/imgs/products/Vent Valve.jpg.jpeg" },
-  { "id": 53, "title": "Welding consumables", "image": "/imgs/products/Welding consumables.jpg.jpeg" },
-  { "id": 54, "title": "welding consumable", "image": "/imgs/products/welding-consumable-250x250.jpg.jpeg" }
+  { "id": 1, "title": "Abrasive Compounds", "images": ["/imgs/products/Abrasive Compounds.jpeg"] },
+  { "id": 2, "title": "Assorted Items", "images": ["/imgs/products/Assorted Items.jpg.jpeg"] },
+  { "id": 3, "title": "Assorted Valves", "images": ["/imgs/products/Assorted Valves.jpg.jpeg", "/imgs/products/Assorted Valves (2).jpg.jpeg"] },
+  { "id": 6, "title": "Ball Valves", "images": ["/imgs/products/Ball Valves.jpg.jpeg", "/imgs/products/Ball Valve Lever.jpg.jpeg"] },
+  { "id": 7, "title": "Butterfly Valve", "images": ["/imgs/products/Butterfly Valve Gear.jpg.jpeg", "/imgs/products/Butterfly Valve Lever.jpg.jpeg"] },
+  { "id": 9, "title": "Carbon Steel Butt Welding Fittings", "images": ["/imgs/products/Carbon-Steel-Butt-Welding-Fittings.jpg.jpeg"] },
+  { "id": 10, "title": "Conveyor Belt", "images": ["/imgs/products/Conveyor Belt.jpg.jpeg", "/imgs/products/Cover strip - Conveyor.jpg.jpeg"] },
+  { "id": 13, "title": "Diaphragm Valve", "images": ["/imgs/products/Diaphragm Valve.jpg.jpeg"] },
+  { "id": 14, "title": "Disc", "images": ["/imgs/products/Disc.jpg.jpeg"] },
+  { "id": 15, "title": "Fastners", "images": ["/imgs/products/Fastners.jpg.jpeg"] },
+  { "id": 16, "title": "Flanged Ball Valve", "images": ["/imgs/products/Flanged Ball Valve.jpg.jpeg", "/imgs/products/Flanged Ball Valves.jpg.jpeg", "/imgs/products/Flanged Ball Valves (2).jpg.jpeg"] },
+  { "id": 20, "title": "Flanges", "images": ["/imgs/products/Flanges.jpg.jpeg", "/imgs/products/Flanges (2).jpg.jpeg"] },
+  { "id": 22, "title": "Galvanize Stair Treads", "images": ["/imgs/products/Galvanize Stair Treads.jpg.jpeg"] },
+  { "id": 23, "title": "Gate Valve", "images": ["/imgs/products/Gate Valve.jpg.jpeg", "/imgs/products/Gate Valves.jpg.jpeg"] },
+  { "id": 25, "title": "Helmitin Glue", "images": ["/imgs/products/Helmitin Glue.png"] },
+  { "id": 26, "title": "Carbon Steel Elbows", "images": ["/imgs/products/IMG_9495 copy.jpg.jpeg"] },
+  { "id": 27, "title": "Tee Fitting", "images": ["/imgs/products/IMG_9496 copy.jpg.jpeg"] },
+  { "id": 28, "title": "Heavy Duty Gate Valve", "images": ["/imgs/products/IMG_9530 copy.jpg.jpeg"] },
+  { "id": 29, "title": "Large Steel Flanges", "images": ["/imgs/products/IMG_9537 copy.jpg.jpeg"] },
+  { "id": 30, "title": "Knife Gate Valve", "images": ["/imgs/products/Knife Gate Valve.jpg.jpeg", "/imgs/products/Knife Gate Valve (2).jpg.jpeg"] },
+  { "id": 32, "title": "Non Metallic Pump", "images": ["/imgs/products/Non Metallic Pump.jpg.jpeg"] },
+  { "id": 33, "title": "Non Return Valve", "images": ["/imgs/products/Non-Return Valve.jpg.jpeg", "/imgs/products/Non-Return Valve (2).jpg.jpeg", "/imgs/products/Non-Return Valve Threaded.jpg.jpeg"] },
+  { "id": 37, "title": "Phosphor Bronze Bars", "images": ["/imgs/products/Phosphor-Bronze Bars.jpg.jpeg"] },
+  { "id": 38, "title": "Pipe Bandage", "images": ["/imgs/products/Pipe Bandage.jpg.jpeg"] },
+  { "id": 39, "title": "Pulley", "images": ["/imgs/products/Pulley.jpg.jpeg"] },
+  { "id": 40, "title": "Slurry Knife Gate Valve", "images": ["/imgs/products/Slurry Knife Gate Valve.jpg.jpeg"] },
+  { "id": 42, "title": "Solenoid Valve", "images": ["/imgs/products/Solenoid Valve.jpg.jpeg"] },
+  { "id": 43, "title": "Spiral Wrap", "images": ["/imgs/products/Spiral Wrap.jpg.jpeg"] },
+  { "id": 45, "title": "Stanchions", "images": ["/imgs/products/Stanchions.jpg.jpeg", "/imgs/products/Stanchions (2).jpg.jpeg"] },
+  { "id": 47, "title": "Steel Fittings", "images": ["/imgs/products/Steel Fittings.jpg.jpeg", "/imgs/products/Steel fitting.jpg.jpeg"] },
+  { "id": 49, "title": "Taper Lock Bush", "images": ["/imgs/products/Taper-Lock-Bush.jpg.jpeg"] },
+  { "id": 50, "title": "Threaded Rods", "images": ["/imgs/products/Threaded Rods.jpg.jpeg"] },
+  { "id": 51, "title": "Valves", "images": ["/imgs/products/Valves.jpg.jpeg"] },
+  { "id": 52, "title": "Vent Valve", "images": ["/imgs/products/Vent Valve.jpg.jpeg"] },
+  { "id": 53, "title": "Welding Consumables", "images": ["/imgs/products/Welding consumables.jpg.jpeg", "/imgs/products/welding-consumable-250x250.jpg.jpeg"] }
 ];
 
 export default function ProductsListSection() {
   const [visibleCount, setVisibleCount] = useState(12);
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const filteredProducts = products.filter(product => 
     product.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -88,6 +70,7 @@ export default function ProductsListSection() {
   useEffect(() => {
     if (selectedProduct) {
       document.body.style.overflow = 'hidden';
+      setActiveImageIndex(0);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -140,7 +123,7 @@ export default function ProductsListSection() {
               <div className="relative w-full h-[220px] bg-slate-100 p-4 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                   <Image 
-                    src={product.image}
+                    src={product.images[0]}
                     alt={product.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -212,11 +195,11 @@ export default function ProductsListSection() {
             </button>
 
             {/* Left Side: Product Image */}
-            <div className="relative w-full sm:w-1/2 h-64 sm:h-auto min-h-[300px] sm:min-h-[400px] bg-slate-50 flex items-center justify-center p-8 border-b sm:border-b-0 sm:border-r border-slate-100">
+            <div className="relative w-full sm:w-1/2 min-h-[300px] sm:min-h-[400px] bg-slate-50 flex flex-col items-center justify-center p-8 border-b sm:border-b-0 sm:border-r border-slate-100">
               <div className="absolute inset-0 bg-pattern opacity-5"></div>
-              <div className="relative w-full h-full">
+              <div className="relative w-full flex-grow h-64 sm:h-auto mb-6">
                 <Image 
-                  src={selectedProduct.image}
+                  src={selectedProduct.images[activeImageIndex]}
                   alt={selectedProduct.title}
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
@@ -224,6 +207,21 @@ export default function ProductsListSection() {
                   className="z-10"
                 />
               </div>
+
+              {/* Thumbnails if multiple images */}
+              {selectedProduct.images.length > 1 && (
+                <div className="flex gap-3 mt-auto z-10 overflow-x-auto w-full pb-2 scrollbar-hide justify-center">
+                  {selectedProduct.images.map((img, idx) => (
+                    <button 
+                      key={idx} 
+                      onClick={() => setActiveImageIndex(idx)}
+                      className={`relative w-16 h-16 flex-shrink-0 border-2 rounded ${activeImageIndex === idx ? 'border-primary' : 'border-slate-200'} hover:border-primary transition-colors`}
+                    >
+                      <Image src={img} alt="" fill style={{ objectFit: 'cover' }} className="rounded-sm" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Right Side: Product Details */}

@@ -17,13 +17,13 @@ type NewsItem = {
 const newsItems: NewsItem[] = [
   {
     id: '1',
-    title: 'Why Data Center Projects Are Delayed and How Supply Chain Strategy Can Solve It',
+    title: 'Why Projects Are Delayed and How Supply Chain Strategy Can Solve It',
     date: '21 May 2026',
     category: 'NEWS',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
     content: [
-      'Building a massive data center is no small feat. Yet, we are seeing more and more projects hit a wall right in the middle of construction. The biggest culprit is often a broken global supply chain. Getting critical equipment like commercial chillers or heavy duty backup generators on site takes longer than ever.',
-      'The good news is that these delays are entirely preventable. By treating your supply chain strategy as the foundation of your project rather than an afterthought, you can completely change the trajectory of your build. This means locking in raw materials early and partnering closely with trusted structural steel erectors long before the ground is broken.',
+      'Executing a massive construction project is no small feat. Yet, we are seeing more and more builds hit a wall right in the middle of development. The biggest culprit is often a broken global supply chain. Getting critical equipment and raw materials on site takes longer than ever before.',
+      'The good news is that these delays are entirely preventable. By treating your supply chain strategy as the foundation of your project rather than an afterthought, you can completely change the trajectory of your build. This means locking in essential materials early and partnering closely with trusted suppliers long before the ground is broken.',
       'Our integrated approach takes the guesswork out of the equation. We help you map out exactly what you need and when you need it, ensuring that sudden material shortages never dictate your timeline. When you have the right strategy in place, your project stays on schedule and your budget remains intact.'
     ],
     ctaText: 'Request Service'

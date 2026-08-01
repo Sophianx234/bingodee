@@ -11,7 +11,7 @@ export default function AboutValuesSection() {
     {
       title: "Security of Supply",
       description: "Through our vertical integrated supply chain model, we guarantee security of supply. Local supply capacity is augmented with international manufacturing partnership capacity and strategic safety stock.",
-      image: "https://images.unsplash.com/photo-1642797735471-3e90055c5ff9?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/imgs/values/v-1.jpeg",
       icon: <ShieldCheck className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -20,7 +20,7 @@ export default function AboutValuesSection() {
     {
       title: "Relevance",
       description: "To continually stay abreast and be responsive to market conditions and customer expectations as part of the DNA of our organization. We aim at providing solutions that are both fit for purpose and competitive, but more importantly designed to sustain long-term relationship due to trust and a mutual beneficial partnering.",
-      image: "https://plus.unsplash.com/premium_photo-1682309553075-c84ea8d9d49a",
+      image: "/imgs/values/v-2x.jpeg",
       icon: <Activity className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -29,7 +29,7 @@ export default function AboutValuesSection() {
     {
       title: "Consistent",
       description: "We offer a personal service and you will be appointed a lead Engineer when you work with us. This means you will not have to speak to someone different each time you call.",
-      image: "/imgs/values/v-3.jpg",
+      image: "/imgs/values/v-3x.jpeg",
       icon: <Headset className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -38,7 +38,7 @@ export default function AboutValuesSection() {
     {
       title: "Individuals",
       description: "We work around you and your needs, providing you with a tailored solution for your organisation.",
-      image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca",
+      image: "/imgs/values/v-4x.jpeg",
       icon: <Users className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -47,7 +47,7 @@ export default function AboutValuesSection() {
     {
       title: "Fully flexible",
       description: "You can retain us for one project or multiple projects; it’s completely up to you.",
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2068&auto=format&fit=crop",
+      image: "/imgs/values/v-5x.jpeg",
       icon: <Handshake className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -56,7 +56,7 @@ export default function AboutValuesSection() {
     {
       title: "Affordable",
       description: "Our services and products are affordable but durable with payment options to suit your business.",
-      image: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0",
+      image: "/imgs/values/v-6x.jpeg",
       icon: <DollarSign className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
@@ -65,7 +65,7 @@ export default function AboutValuesSection() {
     {
       title: "Our code",
       description: "We genuinely care for and support organizations within the third sector, we are ethical and transparent in all of our work.",
-      image: "https://images.unsplash.com/photo-1548838670-cb67b43a6adb",
+      image: "/imgs/values/v-7x.jpeg",
       icon: <Gem className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",

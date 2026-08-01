@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bingodee.com'),
+  metadataBase: new URL('https://bingodeeltd.com'),
   title: {
     default: "Bingodee Co. Ltd. - Engineering Excellence Across Ghana",
     template: "%s | Bingodee Co. Ltd.",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bingodee Co. Ltd. - Engineering Excellence Across Ghana",
     description: "Bingodee Co. Ltd. delivers top-tier engineering services, industrial materials, fabrication, and heavy equipment across Ghana.",
-    url: 'https://bingodee.com',
+    url: 'https://bingodeeltd.com',
     siteName: 'Bingodee Co. Ltd.',
     locale: 'en_GH',
     type: 'website',

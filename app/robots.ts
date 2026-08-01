@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://bingodee.com/sitemap.xml',
+    sitemap: 'https://bingodeeltd.com/sitemap.xml',
   };
 }

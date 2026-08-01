@@ -20,7 +20,7 @@ const newsItems: NewsItem[] = [
     title: 'Why Projects Are Delayed and How Supply Chain Strategy Can Solve It',
     date: '21 May 2026',
     category: 'NEWS',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1538474705339-e87de81450e8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     content: [
       'Executing a massive construction project is no small feat. Yet, we are seeing more and more builds hit a wall right in the middle of development. The biggest culprit is often a broken global supply chain. Getting critical equipment and raw materials on site takes longer than ever before.',
       'The good news is that these delays are entirely preventable. By treating your supply chain strategy as the foundation of your project rather than an afterthought, you can completely change the trajectory of your build. This means locking in essential materials early and partnering closely with trusted suppliers long before the ground is broken.',

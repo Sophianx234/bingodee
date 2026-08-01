@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const storyImages = [
-  "/imgs/products/Assorted Valves (2).jpg.jpeg",
-  "/imgs/products/Assorted Items.jpg.jpeg",
+  "/imgs/products/Carbon-Steel-Butt-Welding-Fittings.jpg.jpeg",
   "/imgs/products/Stanchions (2).jpg.jpeg",
+  "/imgs/products/Fastners.jpg.jpeg",
   "/imgs/products/Conveyor Belts.jpeg"
 ];
 

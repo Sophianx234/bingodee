@@ -12,7 +12,7 @@ export default function AboutValuesSection() {
       title: "Security of Supply",
       description: "Through our vertical integrated supply chain model, we guarantee security of supply. Local supply capacity is augmented with international manufacturing partnership capacity and strategic safety stock.",
       image: "https://images.unsplash.com/photo-1642797735471-3e90055c5ff9?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      icon: <ShieldCheck className="w-6 h-6" strokeWidth={2.5} />,
+      icon: <ShieldCheck className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
@@ -21,7 +21,7 @@ export default function AboutValuesSection() {
       title: "Relevance",
       description: "To continually stay abreast and be responsive to market conditions and customer expectations as part of the DNA of our organization. We aim at providing solutions that are both fit for purpose and competitive, but more importantly designed to sustain long-term relationship due to trust and a mutual beneficial partnering.",
       image: "https://plus.unsplash.com/premium_photo-1682309553075-c84ea8d9d49a",
-      icon: <Activity className="w-6 h-6" strokeWidth={2.5} />,
+      icon: <Activity className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
@@ -30,7 +30,7 @@ export default function AboutValuesSection() {
       title: "Consistent",
       description: "We offer a personal service and you will be appointed a lead Engineer when you work with us. This means you will not have to speak to someone different each time you call.",
       image: "/imgs/values/v-3.jpg",
-      icon: <Headset className="w-6 h-6" strokeWidth={2.5} />,
+      icon: <Headset className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
@@ -39,7 +39,7 @@ export default function AboutValuesSection() {
       title: "Individuals",
       description: "We work around you and your needs, providing you with a tailored solution for your organisation.",
       image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca",
-      icon: <Users className="w-6 h-6" strokeWidth={2.5} />,
+      icon: <Users className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
@@ -48,7 +48,7 @@ export default function AboutValuesSection() {
       title: "Fully flexible",
       description: "You can retain us for one project or multiple projects; it’s completely up to you.",
       image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2068&auto=format&fit=crop",
-      icon: <Handshake className="w-6 h-6" strokeWidth={2.5} />,
+      icon: <Handshake className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
@@ -57,7 +57,7 @@ export default function AboutValuesSection() {
       title: "Affordable",
       description: "Our services and products are affordable but durable with payment options to suit your business.",
       image: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0",
-      icon: <DollarSign className="w-6 h-6" strokeWidth={2.5} />,
+      icon: <DollarSign className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
@@ -66,7 +66,7 @@ export default function AboutValuesSection() {
       title: "Our code",
       description: "We genuinely care for and support organizations within the third sector, we are ethical and transparent in all of our work.",
       image: "https://images.unsplash.com/photo-1548838670-cb67b43a6adb",
-      icon: <Gem className="w-6 h-6" strokeWidth={2.5} />,
+      icon: <Gem className="w-5 h-5" strokeWidth={2.5} />,
       iconPos: "bottom-right",
       textColor: "text-white",
       iconColor: "text-white",
@@ -107,41 +107,74 @@ export default function AboutValuesSection() {
       </div>
 
       {/* Grid of Values */}
-      <div className="w-full flex flex-wrap lg:flex-nowrap h-auto lg:h-[450px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 md:px-8 max-w-6xl mx-auto pb-12">
         {values.map((val, index) => (
           <div 
             key={index} 
             onClick={() => setSelectedValue(val)}
-            className="relative w-1/2 md:w-1/3 lg:w-auto lg:flex-1 aspect-[3/4] lg:aspect-auto lg:h-full group overflow-hidden transition-all duration-500 ease-in-out lg:hover:flex-[1.5] cursor-pointer"
+            className="group relative h-[360px]  overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 border border-slate-200/20"
           >
             {/* Background Image */}
-            <div 
-              className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
-            >
+            <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-110">
               <Image
                 src={val.image}
                 alt={val.title}
-                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 quality={95}
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
             
-            {/* Overlay for readability */}
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black group-hover:via-black/60 transition-colors duration-500"></div>
 
-            {/* Text Overlay */}
-            <h3 className={`absolute bottom-6 left-4 right-4 text-[16px] md:text-[18px] font-semibold ${val.textColor} z-10 transition-all duration-500 group-hover:-translate-y-1 group-hover:text-primary leading-tight drop-shadow-md`}>
-              {val.title}
-            </h3>
+            {/* Content Container */}
+            <div className="absolute inset-0 p-6 flex flex-col justify-end translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+              {/* Icon */}
+              <div className="relative w-14 h-14 md:w-10 md:h-10 mb-5 flex items-center justify-center group-hover:scale-110 transition-all duration-500 flex-shrink-0 shadow-xl">
+                
+                {/* Glassmorphism background inside the octagon */}
+                <div 
+                  className="absolute inset-0 bg-white/10 backdrop-blur-md transition-colors duration-500 group-hover:bg-white/20"
+                  style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}
+                ></div>
 
-            {/* Icon Overlay */}
-            <div 
-              className={`absolute z-10 ${val.iconColor} ${
-                val.iconPos === 'top-right' ? 'top-6 right-6' : 'bottom-6 right-4'
-              } transition-all duration-500 group-hover:scale-110 group-hover:text-primary drop-shadow-md opacity-0 lg:opacity-100 group-hover:opacity-100`}
-            >
-              {val.icon}
+                {/* Octagon Border SVG (Placed after background so it sits on top) */}
+                <svg 
+                  className="absolute inset-0 w-full h-full overflow-visible text-[#ffb700] drop-shadow-sm transition-colors duration-300 group-hover:text-[#ffca4d]"
+                  viewBox="0 0 100 100" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                >
+                  <polygon 
+                    points="30,0 70,0 100,30 100,70 70,100 30,100 0,70 0,30" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+                
+                {/* Icon Content */}
+                <div className={`relative z-10 ${val.iconColor} group-hover:text-white transition-colors duration-300`}>
+                  {val.icon}
+                </div>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-white mb-3 tracking-wide drop-shadow-lg">
+                {val.title}
+              </h3>
+
+              {/* Animated underline */}
+              <div className="w-10 h-[3px] bg-primary/80 group-hover:w-full group-hover:bg-primary transition-all duration-700 ease-in-out rounded-full mb-2"></div>
+              
+              {/* "Read more" hint */}
+              <div className="overflow-hidden h-0 group-hover:h-8 transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 flex items-end">
+                <span className="text-white/90 text-sm font-semibold flex items-center gap-2 uppercase tracking-wider">
+                  Discover More <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+                </span>
+              </div>
             </div>
           </div>
         ))}

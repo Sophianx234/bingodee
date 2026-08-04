@@ -59,9 +59,9 @@ Thank you.`;
                 Talk to Us
               </h3>
               <p className="text-slate-600 text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed">
-                (+233) 243 127 833<br />
-                (+233) 209 669 713<br />
-                (+233) 244 919 613
+                0243 127 833<br />
+                0209 669 713<br />
+                0244 919 613
               </p>
             </div>
           </div>
@@ -151,7 +151,7 @@ Thank you.`;
                       value={formData.contact}
                       onChange={handleChange}
                       required
-                      placeholder="e.g. +233 24 123 4567"
+                      placeholder="e.g. 024 123 4567"
                       className="bg-white px-4 md:px-5 py-3 md:py-3.5 outline-none text-[#1c1c1c] text-[14px] md:text-[15px] font-medium transition-shadow rounded-none placeholder:text-gray-400 placeholder:font-normal" 
                     />
                   </div>
@@ -164,6 +164,7 @@ Thank you.`;
                       className="bg-white px-4 md:px-5 py-3 md:py-3.5 outline-none text-[#1c1c1c] text-[14px] md:text-[15px] font-medium transition-shadow cursor-pointer rounded-none" 
                     >
                       <option value="General Inquiry">General Inquiry</option>
+                      <option value="Request for Free Quote">Request for Free Quote</option>
                       <option value="Engineering Services">Engineering Services</option>
                       <option value="Industrial Materials">Industrial Materials</option>
                       <option value="Fabrication Services">Fabrication Services</option>

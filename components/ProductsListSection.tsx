@@ -78,7 +78,7 @@ export default function ProductsListSection() {
   }, [selectedProduct]);
 
   return (
-    <section className="w-full bg-slate-50 py-16 md:py-24 md:mb-32 relative">
+    <section className="w-full bg-slate-50 py-16 md:py-24 mb-28 md:mb-32 relative">
       <div className="mx-auto w-full max-w-[1400px] px-6 lg:px-12">
         
         {/* Header with Title and Search */}
@@ -108,7 +108,7 @@ export default function ProductsListSection() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {filteredProducts.length === 0 ? (
             <div className="col-span-full py-12 text-center text-slate-500">
               No products found matching "{searchQuery}"
@@ -117,39 +117,31 @@ export default function ProductsListSection() {
           {filteredProducts.slice(0, visibleCount).map((product) => (
             <div 
               key={product.id} 
-              className="group relative bg-white overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-[320px]"
+              onClick={() => setSelectedProduct(product)}
+              className="cursor-pointer group flex flex-col bg-white border border-gray-200 p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             >
               {/* Image Container */}
-              <div className="relative w-full h-[220px] bg-slate-100 p-4 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
-                  <Image 
-                    src={product.images[0]}
-                    alt={product.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    style={{ objectFit: 'cover', objectPosition: 'center' }}
-                  />
-                </div>
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300 z-10"></div>
+              <div className="relative w-full aspect-square mb-4 overflow-hidden rounded-md bg-gray-50">
+                <Image 
+                  src={product.images[0]}
+                  alt={product.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-cover transition-transform duration-500 "
+                />
               </div>
               
               {/* Product Info */}
-              <div className="flex-1 flex flex-col items-center justify-center p-4 bg-white border-t border-slate-100 relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
-                
-                <div className="relative z-10 flex flex-col items-center w-full">
-                  <h3 className="text-[15px] md:text-[16px] font-semibold text-slate-700 group-hover:text-white text-center transition-colors duration-300 line-clamp-2 px-2 mb-2 group-hover:mb-3">
-                    {product.title}
-                  </h3>
-                  
-                  {/* View Details Button (appears on hover) */}
-                  <button 
-                    onClick={() => setSelectedProduct(product)}
-                    className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black text-white text-[13px] font-bold py-1.5 px-5 shadow-sm transform translate-y-4 group-hover:translate-y-0"
-                  >
-                    View Details
-                  </button>
-                </div>
+              <div className="flex flex-col flex-grow items-center justify-between">
+                <h3 className="text-[15px] md:text-[17px] font-bold text-gray-900 leading-tight group-hover:text-primary transition-colors duration-300 line-clamp-2 text-center mb-4 mt-2">
+                  {product.title}
+                </h3>
+                <button 
+                  className="mt-auto border border-gray-300 text-gray-700 text-[13px] font-bold py-1.5 px-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
+                  tabIndex={-1}
+                >
+                  View Details
+                </button>
               </div>
             </div>
           ))}
@@ -160,7 +152,7 @@ export default function ProductsListSection() {
           <div className="mt-16 flex justify-center">
             <button 
               onClick={loadMore}
-              className="bg-primary text-white text-white font-bold py-3 px-8 transition-all duration-300 shadow-md hover:-translate-y-1"
+              className="bg-primary text-white font-bold py-3 px-8 transition-all duration-300 shadow-md hover:-translate-y-1"
             >
               Load More Products
             </button>
